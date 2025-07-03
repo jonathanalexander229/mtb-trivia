@@ -1,0 +1,412 @@
+{
+  "version": "1.0",
+  "last_updated": "2025-07-02",
+  "categories": [
+    "Parts",
+    "Manufacturers", 
+    "Accessories",
+    "Trails",
+    "History",
+    "Venues",
+    "Events",
+    "Suspension",
+    "Riders",
+    "Races",
+    "Lore",
+    "Design",
+    "Technology",
+    "Records"
+  ],
+  "questions": {
+    "easy": [
+      {
+        "id": "easy_001",
+        "category": "Parts",
+        "question": "What does 'MTB' stand for?",
+        "answers": ["Mountain Trail Bike", "Mountain Bike", "Multi-Terrain Bicycle", "Motor Trail Bike"],
+        "correct": 1,
+        "explanation": "MTB is the common abbreviation for Mountain Bike."
+      },
+      {
+        "id": "easy_002",
+        "category": "Parts",
+        "question": "How many wheels does a standard mountain bike have?",
+        "answers": ["1", "2", "3", "4"],
+        "correct": 1,
+        "explanation": "Mountain bikes have two wheels, just like regular bicycles."
+      },
+      {
+        "id": "easy_003",
+        "category": "Manufacturers",
+        "question": "Which of these is a famous mountain bike manufacturer?",
+        "answers": ["Trek", "Toyota", "Samsung", "Nike"],
+        "correct": 0,
+        "explanation": "Trek is one of the world's largest bicycle manufacturers."
+      },
+      {
+        "id": "easy_004",
+        "category": "Parts",
+        "question": "What part of the bike do you use to stop?",
+        "answers": ["Pedals", "Handlebars", "Brakes", "Seat"],
+        "correct": 2,
+        "explanation": "Brakes are used to slow down and stop the bicycle."
+      },
+      {
+        "id": "easy_005",
+        "category": "Accessories",
+        "question": "What should you always wear when mountain biking for safety?",
+        "answers": ["Sunglasses", "Helmet", "Gloves", "Knee pads"],
+        "correct": 1,
+        "explanation": "A helmet is essential safety equipment that protects your head."
+      },
+      {
+        "id": "easy_006",
+        "category": "Parts",
+        "question": "What do you use to change gears on a mountain bike?",
+        "answers": ["Brakes", "Shifters", "Pedals", "Handlebars"],
+        "correct": 1,
+        "explanation": "Shifters control the derailleur to change gears."
+      },
+      {
+        "id": "easy_007",
+        "category": "Trails",
+        "question": "What type of terrain are mountain bikes designed for?",
+        "answers": ["Smooth roads", "Off-road trails", "Swimming pools", "Ice rinks"],
+        "correct": 1,
+        "explanation": "Mountain bikes are specifically designed for off-road terrain."
+      },
+      {
+        "id": "easy_008",
+        "category": "Parts",
+        "question": "What connects the pedals to the bike?",
+        "answers": ["Chain", "Brakes", "Handlebars", "Seat"],
+        "correct": 0,
+        "explanation": "The chain transfers power from the pedals to the rear wheel."
+      },
+      {
+        "id": "easy_009",
+        "category": "Manufacturers",
+        "question": "Which company makes the 'Stumpjumper' mountain bike?",
+        "answers": ["Giant", "Specialized", "Cannondale", "Scott"],
+        "correct": 1,
+        "explanation": "The Stumpjumper is Specialized's iconic mountain bike model."
+      },
+      {
+        "id": "easy_010",
+        "category": "Accessories",
+        "question": "What do you use to carry water while riding?",
+        "answers": ["Backpack", "Water bottle", "Helmet", "Gloves"],
+        "correct": 1,
+        "explanation": "Water bottles are the most common way to stay hydrated while riding."
+      },
+      {
+        "id": "easy_011",
+        "category": "History",
+        "question": "When was the first mass-produced mountain bike made?",
+        "answers": ["1975", "1981", "1985", "1990"],
+        "correct": 1,
+        "explanation": "The Specialized Stumpjumper was first produced in 1981."
+      },
+      {
+        "id": "easy_012",
+        "category": "Parts",
+        "question": "What are the round things that spin on a mountain bike?",
+        "answers": ["Wheels", "Gears", "Pedals", "Chains"],
+        "correct": 0,
+        "explanation": "Wheels are the circular components that allow the bike to roll."
+      },
+      {
+        "id": "easy_013",
+        "category": "Venues",
+        "question": "Which country is home to Whistler Bike Park?",
+        "answers": ["USA", "Canada", "Australia", "New Zealand"],
+        "correct": 1,
+        "explanation": "Whistler is located in British Columbia, Canada."
+      },
+      {
+        "id": "easy_014",
+        "category": "Parts",
+        "question": "What do you sit on when riding a mountain bike?",
+        "answers": ["Handlebars", "Frame", "Saddle", "Pedals"],
+        "correct": 2,
+        "explanation": "The saddle (or seat) is where the rider sits."
+      },
+      {
+        "id": "easy_015",
+        "category": "Events",
+        "question": "What is Crankworx?",
+        "answers": ["A bike part", "A mountain bike festival", "A trail name", "A riding technique"],
+        "correct": 1,
+        "explanation": "Crankworx is the world's largest mountain bike festival series."
+      }
+    ],
+    "medium": [
+      {
+        "id": "medium_001",
+        "category": "Suspension",
+        "question": "What does 'hardtail' mean in mountain biking?",
+        "answers": ["Bike with front suspension only", "Bike with rear suspension only", "Bike with no suspension", "Bike with both front and rear suspension"],
+        "correct": 0,
+        "explanation": "A hardtail has front suspension but no rear suspension."
+      },
+      {
+        "id": "medium_002",
+        "category": "Parts",
+        "question": "What is a 'derailleur' used for?",
+        "answers": ["Braking", "Steering", "Changing gears", "Suspension"],
+        "correct": 2,
+        "explanation": "The derailleur moves the chain between different gears."
+      },
+      {
+        "id": "medium_003",
+        "category": "Manufacturers",
+        "question": "Which brand is known for the 'Enduro' mountain bike series?",
+        "answers": ["Trek", "Specialized", "Giant", "Cannondale"],
+        "correct": 1,
+        "explanation": "Specialized makes the popular Enduro line of mountain bikes."
+      },
+      {
+        "id": "medium_004",
+        "category": "Riders",
+        "question": "Who is considered one of the greatest downhill mountain bikers of all time?",
+        "answers": ["Greg Minnaar", "Lance Armstrong", "Tony Hawk", "Usain Bolt"],
+        "correct": 0,
+        "explanation": "Greg Minnaar is a multiple-time Downhill World Champion."
+      },
+      {
+        "id": "medium_005",
+        "category": "Races",
+        "question": "What does 'XC' stand for in mountain bike racing?",
+        "answers": ["Extreme Competition", "Cross Country", "Extra Challenging", "X-treme Course"],
+        "correct": 1,
+        "explanation": "XC stands for Cross Country, a racing discipline."
+      },
+      {
+        "id": "medium_006",
+        "category": "Parts",
+        "question": "What is the typical wheel size for modern mountain bikes?",
+        "answers": ["26 inches", "27.5 or 29 inches", "24 inches", "32 inches"],
+        "correct": 1,
+        "explanation": "Modern mountain bikes typically use 27.5\" or 29\" wheels."
+      },
+      {
+        "id": "medium_007",
+        "category": "Suspension",
+        "question": "What does 'travel' refer to in mountain bike suspension?",
+        "answers": ["Distance you can ride", "How far the suspension compresses", "Speed of the bike", "Weight of the bike"],
+        "correct": 1,
+        "explanation": "Travel is the distance the suspension can compress and extend."
+      },
+      {
+        "id": "medium_008",
+        "category": "Trails",
+        "question": "What is a 'singletrack' trail?",
+        "answers": ["A trail for one person only", "A narrow trail wide enough for one bike", "A straight trail", "A circular trail"],
+        "correct": 1,
+        "explanation": "Singletrack is a narrow trail that accommodates one bike at a time."
+      },
+      {
+        "id": "medium_009",
+        "category": "Parts",
+        "question": "What is a 'dropper post'?",
+        "answers": ["A post that drops the bike", "An adjustable height seat post", "A brake component", "A gear shifter"],
+        "correct": 1,
+        "explanation": "A dropper post allows you to adjust saddle height while riding."
+      },
+      {
+        "id": "medium_010",
+        "category": "Accessories",
+        "question": "What is a 'tubeless' tire setup?",
+        "answers": ["Tires without inner tubes", "Tires with extra tubes", "Tires for tubes", "Lightweight tires"],
+        "correct": 0,
+        "explanation": "Tubeless tires don't use inner tubes, sealed with sealant instead."
+      },
+      {
+        "id": "medium_011",
+        "category": "History",
+        "question": "What was the first mass-produced mountain bike called?",
+        "answers": ["Specialized Stumpjumper", "Trek 850", "Cannondale SM500", "Giant ATX"],
+        "correct": 0,
+        "explanation": "The Specialized Stumpjumper was the first mass-produced mountain bike."
+      },
+      {
+        "id": "medium_012",
+        "category": "Events",
+        "question": "Where was Crankworx mountain bike festival first held?",
+        "answers": ["Whistler, Canada", "Moab, USA", "Chamonix, France", "Rotorua, New Zealand"],
+        "correct": 0,
+        "explanation": "Crankworx began in Whistler, British Columbia in 2004."
+      },
+      {
+        "id": "medium_013",
+        "category": "Manufacturers",
+        "question": "What does Transition Bikes call their geometry concept?",
+        "answers": ["Progressive Geometry", "Speed Balanced Geometry", "Modern Geometry", "Aggressive Geometry"],
+        "correct": 1,
+        "explanation": "Transition's SBG stands for Speed Balanced Geometry."
+      },
+      {
+        "id": "medium_014",
+        "category": "Lore",
+        "question": "What does 'sending it' mean in mountain biking?",
+        "answers": ["Mailing your bike", "Going for it aggressively", "Riding slowly", "Taking a break"],
+        "correct": 1,
+        "explanation": "'Sending it' means committing fully to a challenging feature or line."
+      },
+      {
+        "id": "medium_015",
+        "category": "Events",
+        "question": "What year did Crankworx first start?",
+        "answers": ["2000", "2004", "2008", "2010"],
+        "correct": 1,
+        "explanation": "Crankworx began in 2004 in Whistler, BC."
+      }
+    ],
+    "hard": [
+      {
+        "id": "hard_001",
+        "category": "Suspension",
+        "question": "What is the difference between air and coil suspension?",
+        "answers": ["Air is lighter, coil is more consistent", "Coil is lighter, air is heavier", "No difference", "Air is only for rear, coil for front"],
+        "correct": 0,
+        "explanation": "Air shocks are lighter and adjustable, while coil shocks provide more consistent performance."
+      },
+      {
+        "id": "hard_002",
+        "category": "Riders",
+        "question": "Which rider has won the most Downhill World Championships?",
+        "answers": ["Aaron Gwin", "Greg Minnaar", "Steve Peat", "Fabien Barel"],
+        "correct": 1,
+        "explanation": "Greg Minnaar holds the record for most Downhill World Championship wins."
+      },
+      {
+        "id": "hard_003",
+        "category": "Design",
+        "question": "What is 'progressive geometry' in mountain bike design?",
+        "answers": ["Longer reach, slacker angles", "Shorter reach, steeper angles", "Equal reach and angles", "Adjustable geometry"],
+        "correct": 0,
+        "explanation": "Progressive geometry features longer reach and slacker head tube angles for stability."
+      },
+      {
+        "id": "hard_004",
+        "category": "History",
+        "question": "Who designed the first Specialized Stumpjumper frame?",
+        "answers": ["Mike Sinyard", "Tim Neenan", "Gary Fisher", "Tom Ritchey"],
+        "correct": 1,
+        "explanation": "Tim Neenan designed the original Stumpjumper frame for Specialized."
+      },
+      {
+        "id": "hard_005",
+        "category": "Records",
+        "question": "What is the fastest recorded speed on a mountain bike?",
+        "answers": ["138 mph", "141 mph", "156 mph", "164 mph"],
+        "correct": 1,
+        "explanation": "Eric Barone set the record at 141 mph in 2017 on a snowy ski slope."
+      },
+      {
+        "id": "hard_006",
+        "category": "Venues",
+        "question": "What famous trail gave its name to 'Repack' racing?",
+        "answers": ["Marin County trail where riders had to repack hot brake hubs", "A trail in Colorado", "Whistler's main trail", "A trail in Utah"],
+        "correct": 0,
+        "explanation": "Repack refers to repacking brake hubs that overheated on the descent."
+      },
+      {
+        "id": "hard_007",
+        "category": "Events",
+        "question": "What is the 'Triple Crown of Slopestyle' at Crankworx?",
+        "answers": ["Winning 3 events in a season", "Winning 3 years in a row", "3 different trick categories", "3 different locations"],
+        "correct": 0,
+        "explanation": "The Triple Crown requires winning all three Crankworx slopestyle events in one season."
+      },
+      {
+        "id": "hard_008",
+        "category": "Parts",
+        "question": "What year were V-brakes introduced to mountain biking?",
+        "answers": ["1994", "1996", "1998", "2000"],
+        "correct": 1,
+        "explanation": "V-brakes debuted in 1996, revolutionizing mountain bike braking."
+      },
+      {
+        "id": "hard_009",
+        "category": "Riders",
+        "question": "How many World Championship titles did Nico Vouilloz win?",
+        "answers": ["8", "10", "12", "15"],
+        "correct": 1,
+        "explanation": "Nico Vouilloz won 10 World Championship titles during his career."
+      },
+      {
+        "id": "hard_010",
+        "category": "Technology",
+        "question": "What is Specialized's GENIE shock technology?",
+        "answers": ["Electronic damping", "Dual air chambers with PSA spring", "Coil-over design", "Magnetic damping"],
+        "correct": 1,
+        "explanation": "GENIE features dual air chambers with a Progressive Spring Assistant (PSA)."
+      },
+      {
+        "id": "hard_011",
+        "category": "Venues",
+        "question": "When was the first UCI Mountain Bike World Championships held?",
+        "answers": ["1988", "1990", "1992", "1994"],
+        "correct": 1,
+        "explanation": "The first UCI Mountain Bike World Championships took place in 1990 in Durango, Colorado."
+      },
+      {
+        "id": "hard_012",
+        "category": "History",
+        "question": "What was the original price of the first Stumpjumper in 1981?",
+        "answers": ["$650", "$750", "$850", "$950"],
+        "correct": 1,
+        "explanation": "The original Stumpjumper sold for $750 complete or $395 for frame only."
+      },
+      {
+        "id": "hard_013",
+        "category": "Events",
+        "question": "When was the UCI Downhill World Cup first held?",
+        "answers": ["1989", "1991", "1993", "1995"],
+        "correct": 1,
+        "explanation": "The UCI Downhill World Cup was inaugurated in 1991."
+      },
+      {
+        "id": "hard_014",
+        "category": "Technology",
+        "question": "What does 'UDH' stand for in modern mountain bike design?",
+        "answers": ["Universal Derailleur Hanger", "Ultra Durable Housing", "Unified Drive Hub", "Universal Disc Housing"],
+        "correct": 0,
+        "explanation": "UDH is the Universal Derailleur Hanger standard introduced by SRAM."
+      },
+      {
+        "id": "hard_015",
+        "category": "Events",
+        "question": "What is the prize money for winning the Crankworx Triple Crown of Slopestyle?",
+        "answers": ["$15,000 CAD", "$20,000 CAD", "$25,000 CAD", "$30,000 CAD"],
+        "correct": 2,
+        "explanation": "The Triple Crown of Slopestyle is worth $25,000 CAD."
+      }
+    ]
+  },
+  "metadata": {
+    "total_questions": 45,
+    "questions_by_difficulty": {
+      "easy": 15,
+      "medium": 15, 
+      "hard": 15
+    },
+    "questions_by_category": {
+      "Parts": 8,
+      "Manufacturers": 4,
+      "Accessories": 3,
+      "Trails": 2,
+      "History": 5,
+      "Venues": 4,
+      "Events": 6,
+      "Suspension": 4,
+      "Riders": 3,
+      "Races": 2,
+      "Lore": 2,
+      "Design": 1,
+      "Technology": 3,
+      "Records": 2
+    }
+  }
+}

@@ -25,7 +25,7 @@
             background: rgba(0, 0, 0, 0.8);
             border-radius: 20px;
             padding: 30px;
-            max-width: 800px;
+            max-width: 900px;
             width: 90%;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(10px);
@@ -46,189 +46,16 @@
             background-clip: text;
         }
 
+        .db-info h3 {
+            color: #f7931e;
+            margin-bottom: 8px;
+        }
+
         .difficulty-selector {
-            display: flex;
+            display: none;
             justify-content: center;
             gap: 15px;
             margin-bottom: 30px;
-        }
-
-        .difficulty-btn {
-            padding: 12px 20px;
-            border: none;
-            border-radius: 10px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-        }
-
-        .difficulty-btn.easy {
-            background: #4CAF50;
-            color: white;
-        }
-
-        .difficulty-btn.medium {
-            background: #FF9800;
-            color: white;
-        }
-
-        .difficulty-btn.hard {
-            background: #F44336;
-            color: white;
-        }
-
-        .difficulty-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .difficulty-btn.active {
-            transform: scale(1.1);
-            box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
-        }
-
-        .question-section {
-            display: none;
-            text-align: center;
-        }
-
-        .question-section.active {
-            display: block;
-        }
-
-        .score-info {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .question-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 25px;
-            backdrop-filter: blur(5px);
-        }
-
-        .question-text {
-            font-size: 1.4em;
-            margin-bottom: 25px;
-            line-height: 1.5;
-        }
-
-        .answers-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-
-        .answer-btn {
-            padding: 15px 20px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
-        }
-
-        .answer-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: rgba(255, 255, 255, 0.5);
-            transform: translateY(-2px);
-        }
-
-        .answer-btn.correct {
-            background: #4CAF50;
-            border-color: #4CAF50;
-            animation: correctPulse 0.6s ease;
-        }
-
-        .answer-btn.incorrect {
-            background: #F44336;
-            border-color: #F44336;
-            animation: incorrectShake 0.6s ease;
-        }
-
-        @keyframes correctPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        @keyframes incorrectShake {
-            0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-5px); }
-            75% { transform: translateX(5px); }
-        }
-
-        .next-btn {
-            background: linear-gradient(45deg, #ff6b35, #f7931e);
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 10px;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: none;
-        }
-
-        .next-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
-        }
-
-        .next-btn.show {
-            display: inline-block;
-        }
-
-        .game-over {
-            text-align: center;
-            display: none;
-        }
-
-        .game-over.show {
-            display: block;
-        }
-
-        .final-score {
-            font-size: 2em;
-            margin: 20px 0;
-            color: #f7931e;
-        }
-
-        .restart-btn {
-            background: #4CAF50;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 10px;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .restart-btn:hover {
-            background: #45a049;
-            transform: translateY(-2px);
-        }
-
-        .category-indicator {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 14px;
-            margin-bottom: 15px;
-            display: inline-block;
         }
     </style>
 </head>
@@ -239,7 +66,12 @@
             <p>Test your mountain biking knowledge!</p>
         </div>
 
-        <div class="difficulty-selector">
+        <div id="dbInfo" class="db-info">
+            <h3>Mountain Bike Trivia Database</h3>
+            <div id="dbStats">Loading question database...</div>
+        </div>
+
+        <div class="difficulty-selector" id="difficultySelector">
             <button class="difficulty-btn easy" onclick="selectDifficulty('easy')">Easy Trail</button>
             <button class="difficulty-btn medium" onclick="selectDifficulty('medium')">Technical Ride</button>
             <button class="difficulty-btn hard" onclick="selectDifficulty('hard')">Gnarly Descent</button>
@@ -255,6 +87,7 @@
                 <div class="category-indicator" id="categoryIndicator"></div>
                 <div class="question-text" id="questionText"></div>
                 <div class="answers-grid" id="answersGrid"></div>
+                <div class="explanation" id="explanation"></div>
                 <button class="next-btn" id="nextBtn" onclick="nextQuestion()">Next Question</button>
             </div>
         </div>
@@ -264,206 +97,240 @@
             <div class="final-score" id="finalScore"></div>
             <p id="scoreMessage"></p>
             <button class="restart-btn" onclick="restartGame()">Play Again</button>
+            <button class="restart-btn" onclick="showDifficultySelector()">Change Difficulty</button>
         </div>
     </div>
 
     <script>
-        const questions = {
-            easy: [
-                {
-                    category: "Parts",
-                    question: "What does 'MTB' stand for?",
-                    answers: ["Mountain Trail Bike", "Mountain Bike", "Multi-Terrain Bicycle", "Motor Trail Bike"],
-                    correct: 1
-                },
-                {
-                    category: "Parts",
-                    question: "How many wheels does a standard mountain bike have?",
-                    answers: ["1", "2", "3", "4"],
-                    correct: 1
-                },
-                {
-                    category: "Manufacturers",
-                    question: "Which of these is a famous mountain bike manufacturer?",
-                    answers: ["Trek", "Toyota", "Samsung", "Nike"],
-                    correct: 0
-                },
-                {
-                    category: "Parts",
-                    question: "What part of the bike do you use to stop?",
-                    answers: ["Pedals", "Handlebars", "Brakes", "Seat"],
-                    correct: 2
-                },
-                {
-                    category: "Accessories",
-                    question: "What should you always wear when mountain biking for safety?",
-                    answers: ["Sunglasses", "Helmet", "Gloves", "Knee pads"],
-                    correct: 1
-                },
-                {
-                    category: "Parts",
-                    question: "What do you use to change gears on a mountain bike?",
-                    answers: ["Brakes", "Shifters", "Pedals", "Handlebars"],
-                    correct: 1
-                },
-                {
-                    category: "Trails",
-                    question: "What type of terrain are mountain bikes designed for?",
-                    answers: ["Smooth roads", "Off-road trails", "Swimming pools", "Ice rinks"],
-                    correct: 1
-                },
-                {
-                    category: "Parts",
-                    question: "What connects the pedals to the bike?",
-                    answers: ["Chain", "Brakes", "Handlebars", "Seat"],
-                    correct: 0
-                },
-                {
-                    category: "Manufacturers",
-                    question: "Which company makes the 'Stumpjumper' mountain bike?",
-                    answers: ["Giant", "Specialized", "Cannondale", "Scott"],
-                    correct: 1
-                },
-                {
-                    category: "Accessories",
-                    question: "What do you use to carry water while riding?",
-                    answers: ["Backpack", "Water bottle", "Helmet", "Gloves"],
-                    correct: 1
-                }
-            ],
-            medium: [
-                {
-                    category: "Suspension",
-                    question: "What does 'hardtail' mean in mountain biking?",
-                    answers: ["Bike with front suspension only", "Bike with rear suspension only", "Bike with no suspension", "Bike with both front and rear suspension"],
-                    correct: 0
-                },
-                {
-                    category: "Parts",
-                    question: "What is a 'derailleur' used for?",
-                    answers: ["Braking", "Steering", "Changing gears", "Suspension"],
-                    correct: 2
-                },
-                {
-                    category: "Manufacturers",
-                    question: "Which brand is known for the 'Enduro' mountain bike series?",
-                    answers: ["Trek", "Specialized", "Giant", "Cannondale"],
-                    correct: 1
-                },
-                {
-                    category: "Riders",
-                    question: "Who is considered one of the greatest downhill mountain bikers of all time?",
-                    answers: ["Greg Minnaar", "Lance Armstrong", "Tony Hawk", "Usain Bolt"],
-                    correct: 0
-                },
-                {
-                    category: "Races",
-                    question: "What does 'XC' stand for in mountain bike racing?",
-                    answers: ["Extreme Competition", "Cross Country", "Extra Challenging", "X-treme Course"],
-                    correct: 1
-                },
-                {
-                    category: "Parts",
-                    question: "What is the typical wheel size for modern mountain bikes?",
-                    answers: ["26 inches", "27.5 or 29 inches", "24 inches", "32 inches"],
-                    correct: 1
-                },
-                {
-                    category: "Suspension",
-                    question: "What does 'travel' refer to in mountain bike suspension?",
-                    answers: ["Distance you can ride", "How far the suspension compresses", "Speed of the bike", "Weight of the bike"],
-                    correct: 1
-                },
-                {
-                    category: "Trails",
-                    question: "What is a 'singletrack' trail?",
-                    answers: ["A trail for one person only", "A narrow trail wide enough for one bike", "A straight trail", "A circular trail"],
-                    correct: 1
-                },
-                {
-                    category: "Parts",
-                    question: "What is a 'dropper post'?",
-                    answers: ["A post that drops the bike", "An adjustable height seat post", "A brake component", "A gear shifter"],
-                    correct: 1
-                },
-                {
-                    category: "Accessories",
-                    question: "What is a 'tubeless' tire setup?",
-                    answers: ["Tires without inner tubes", "Tires with extra tubes", "Tires for tubes", "Lightweight tires"],
-                    correct: 0
-                }
-            ],
-            hard: [
-                {
-                    category: "Suspension",
-                    question: "What is the difference between air and coil suspension?",
-                    answers: ["Air is lighter, coil is more consistent", "Coil is lighter, air is heavier", "No difference", "Air is only for rear, coil for front"],
-                    correct: 0
-                },
-                {
-                    category: "Riders",
-                    question: "Which rider has won the most Downhill World Championships?",
-                    answers: ["Aaron Gwin", "Greg Minnaar", "Steve Peat", "Fabien Barel"],
-                    correct: 1
-                },
-                {
-                    category: "Venues",
-                    question: "Where is the famous 'Whistler Bike Park' located?",
-                    answers: ["Colorado, USA", "British Columbia, Canada", "Alps, France", "Tasmania, Australia"],
-                    correct: 1
-                },
-                {
-                    category: "Design",
-                    question: "What is 'progressive geometry' in mountain bike design?",
-                    answers: ["Longer reach, slacker angles", "Shorter reach, steeper angles", "Equal reach and angles", "Adjustable geometry"],
-                    correct: 0
-                },
-                {
-                    category: "Manufacturers",
-                    question: "Which company pioneered the first mass-produced mountain bike?",
-                    answers: ["Specialized", "Trek", "Gary Fisher", "Ritchey"],
-                    correct: 0
-                },
-                {
-                    category: "Races",
-                    question: "What is the 'Enduro World Series'?",
-                    answers: ["A downhill racing series", "A cross-country racing series", "A stage-based racing format", "A trials competition"],
-                    correct: 2
-                },
-                {
-                    category: "Parts",
-                    question: "What is 'boost spacing' in mountain bike hubs?",
-                    answers: ["110mm front, 148mm rear", "100mm front, 142mm rear", "120mm front, 150mm rear", "Standard spacing"],
-                    correct: 0
-                },
-                {
-                    category: "Trails",
-                    question: "What is the 'North Shore' style of mountain biking?",
-                    answers: ["Beach riding", "Technical wooden features", "Desert riding", "Snow biking"],
-                    correct: 1
-                },
-                {
-                    category: "Suspension",
-                    question: "What is 'anti-squat' in rear suspension design?",
-                    answers: ["Suspension that doesn't compress", "Resistance to compression under pedaling", "A type of shock", "Suspension adjustment"],
-                    correct: 1
-                },
-                {
-                    category: "Lore",
-                    question: "What does 'Klunker' refer to in mountain bike history?",
-                    answers: ["A broken bike", "Early mountain bikes from the 1970s", "A type of trail", "A riding technique"],
-                    correct: 1
-                }
-            ]
-        };
-
+        // Global variables
+        let questionsDB = null;
         let currentDifficulty = '';
         let currentQuestionIndex = 0;
         let score = 0;
         let gameQuestions = [];
         let answered = false;
 
+        // Default questions database (fallback)
+        const defaultQuestionsDB = {
+            "version": "1.0",
+            "questions": {
+                "easy": [
+                    {
+                        "id": "easy_001",
+                        "category": "Parts",
+                        "question": "What does 'MTB' stand for?",
+                        "answers": ["Mountain Trail Bike", "Mountain Bike", "Multi-Terrain Bicycle", "Motor Trail Bike"],
+                        "correct": 1,
+                        "explanation": "MTB is the common abbreviation for Mountain Bike."
+                    },
+                    {
+                        "id": "easy_002",
+                        "category": "Manufacturers",
+                        "question": "Which company makes the 'Stumpjumper' mountain bike?",
+                        "answers": ["Giant", "Specialized", "Cannondale", "Scott"],
+                        "correct": 1,
+                        "explanation": "The Stumpjumper is Specialized's iconic mountain bike model."
+                    },
+                    {
+                        "id": "easy_003",
+                        "category": "Parts",
+                        "question": "What part of the bike do you use to stop?",
+                        "answers": ["Pedals", "Handlebars", "Brakes", "Seat"],
+                        "correct": 2,
+                        "explanation": "Brakes are used to slow down and stop the bicycle."
+                    },
+                    {
+                        "id": "easy_004",
+                        "category": "Accessories",
+                        "question": "What should you always wear when mountain biking for safety?",
+                        "answers": ["Sunglasses", "Helmet", "Gloves", "Knee pads"],
+                        "correct": 1,
+                        "explanation": "A helmet is essential safety equipment that protects your head."
+                    },
+                    {
+                        "id": "easy_005",
+                        "category": "Events",
+                        "question": "What is Crankworx?",
+                        "answers": ["A bike part", "A mountain bike festival", "A trail name", "A riding technique"],
+                        "correct": 1,
+                        "explanation": "Crankworx is the world's largest mountain bike festival series."
+                    }
+                ],
+                "medium": [
+                    {
+                        "id": "medium_001",
+                        "category": "Suspension",
+                        "question": "What does 'hardtail' mean in mountain biking?",
+                        "answers": ["Bike with front suspension only", "Bike with rear suspension only", "Bike with no suspension", "Bike with both front and rear suspension"],
+                        "correct": 0,
+                        "explanation": "A hardtail has front suspension but no rear suspension."
+                    },
+                    {
+                        "id": "medium_002",
+                        "category": "Parts",
+                        "question": "What is a 'derailleur' used for?",
+                        "answers": ["Braking", "Steering", "Changing gears", "Suspension"],
+                        "correct": 2,
+                        "explanation": "The derailleur moves the chain between different gears."
+                    },
+                    {
+                        "id": "medium_003",
+                        "category": "Riders",
+                        "question": "Who is considered one of the greatest downhill mountain bikers of all time?",
+                        "answers": ["Greg Minnaar", "Lance Armstrong", "Tony Hawk", "Usain Bolt"],
+                        "correct": 0,
+                        "explanation": "Greg Minnaar is a multiple-time Downhill World Champion."
+                    },
+                    {
+                        "id": "medium_004",
+                        "category": "Events",
+                        "question": "Where was Crankworx mountain bike festival first held?",
+                        "answers": ["Whistler, Canada", "Moab, USA", "Chamonix, France", "Rotorua, New Zealand"],
+                        "correct": 0,
+                        "explanation": "Crankworx began in Whistler, British Columbia in 2004."
+                    },
+                    {
+                        "id": "medium_005",
+                        "category": "Parts",
+                        "question": "What is a 'dropper post'?",
+                        "answers": ["A post that drops the bike", "An adjustable height seat post", "A brake component", "A gear shifter"],
+                        "correct": 1,
+                        "explanation": "A dropper post allows you to adjust saddle height while riding."
+                    }
+                ],
+                "hard": [
+                    {
+                        "id": "hard_001",
+                        "category": "Suspension",
+                        "question": "What is the difference between air and coil suspension?",
+                        "answers": ["Air is lighter, coil is more consistent", "Coil is lighter, air is heavier", "No difference", "Air is only for rear, coil for front"],
+                        "correct": 0,
+                        "explanation": "Air shocks are lighter and adjustable, while coil shocks provide more consistent performance."
+                    },
+                    {
+                        "id": "hard_002",
+                        "category": "History",
+                        "question": "Who designed the first Specialized Stumpjumper frame?",
+                        "answers": ["Mike Sinyard", "Tim Neenan", "Gary Fisher", "Tom Ritchey"],
+                        "correct": 1,
+                        "explanation": "Tim Neenan designed the original Stumpjumper frame for Specialized."
+                    },
+                    {
+                        "id": "hard_003",
+                        "category": "Records",
+                        "question": "What is the fastest recorded speed on a mountain bike?",
+                        "answers": ["138 mph", "141 mph", "156 mph", "164 mph"],
+                        "correct": 1,
+                        "explanation": "Eric Barone set the record at 141 mph in 2017 on a snowy ski slope."
+                    },
+                    {
+                        "id": "hard_004",
+                        "category": "Events",
+                        "question": "What is the 'Triple Crown of Slopestyle' at Crankworx?",
+                        "answers": ["Winning 3 events in a season", "Winning 3 years in a row", "3 different trick categories", "3 different locations"],
+                        "correct": 0,
+                        "explanation": "The Triple Crown requires winning all three Crankworx slopestyle events in one season."
+                    },
+                    {
+                        "id": "hard_005",
+                        "category": "Technology",
+                        "question": "What is Specialized's GENIE shock technology?",
+                        "answers": ["Electronic damping", "Dual air chambers with PSA spring", "Coil-over design", "Magnetic damping"],
+                        "correct": 1,
+                        "explanation": "GENIE features dual air chambers with a Progressive Spring Assistant (PSA)."
+                    }
+                ]
+            },
+            "metadata": {
+                "total_questions": 15,
+                "questions_by_difficulty": {
+                    "easy": 5,
+                    "medium": 5,
+                    "hard": 5
+                }
+            }
+        };
+
+        // Initialize the game
+        document.addEventListener('DOMContentLoaded', function() {
+            loadQuestionsFromFile();
+        });
+
+        async function loadQuestionsFromFile() {
+            try {
+                const response = await fetch('trivia_db.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const jsonData = await response.json();
+                
+                if (validateQuestionsDB(jsonData)) {
+                    questionsDB = jsonData;
+                    showDBInfo();
+                    showDifficultySelector();
+                } else {
+                    throw new Error('Invalid question database format');
+                }
+            } catch (error) {
+                console.warn('Could not load trivia_db.json, using default questions:', error);
+                loadDefaultQuestions();
+            }
+        }
+
+        function loadDefaultQuestions() {
+            questionsDB = defaultQuestionsDB;
+            showDBInfo();
+            showDifficultySelector();
+        }
+
+        function validateQuestionsDB(db) {
+            if (!db || !db.questions) return false;
+            if (!db.questions.easy || !db.questions.medium || !db.questions.hard) return false;
+            
+            // Check if each difficulty has at least one question
+            const difficulties = ['easy', 'medium', 'hard'];
+            for (let difficulty of difficulties) {
+                if (!Array.isArray(db.questions[difficulty]) || db.questions[difficulty].length === 0) {
+                    return false;
+                }
+                
+                // Validate question structure
+                for (let question of db.questions[difficulty]) {
+                    if (!question.question || !question.answers || !Array.isArray(question.answers) || 
+                        question.answers.length !== 4 || typeof question.correct !== 'number') {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
+        function showDBInfo() {
+            const dbInfo = document.getElementById('dbInfo');
+            const dbStats = document.getElementById('dbStats');
+            
+            const metadata = questionsDB.metadata || {};
+            const totalQuestions = metadata.total_questions || 'Unknown';
+            const version = questionsDB.version || '1.0';
+            
+            dbStats.innerHTML = `
+                <p><strong>Version:</strong> ${version} | <strong>Total Questions:</strong> ${totalQuestions}</p>
+                <p><strong>Easy:</strong> ${questionsDB.questions.easy.length} | 
+                   <strong>Medium:</strong> ${questionsDB.questions.medium.length} | 
+                   <strong>Hard:</strong> ${questionsDB.questions.hard.length}</p>
+            `;
+        }
+
+        function showDifficultySelector() {
+            document.getElementById('difficultySelector').style.display = 'flex';
+        }
+
         function selectDifficulty(difficulty) {
+            if (!questionsDB || !questionsDB.questions[difficulty]) {
+                alert('Questions not available for this difficulty');
+                return;
+            }
+
             currentDifficulty = difficulty;
             currentQuestionIndex = 0;
             score = 0;
@@ -474,8 +341,11 @@
             document.querySelector(`.difficulty-btn.${difficulty}`).classList.add('active');
             
             // Get questions for this difficulty
-            gameQuestions = [...questions[difficulty]];
+            gameQuestions = [...questionsDB.questions[difficulty]];
             shuffleArray(gameQuestions);
+            
+            // Limit to 10 questions max
+            gameQuestions = gameQuestions.slice(0, Math.min(10, gameQuestions.length));
             
             // Show question section
             document.getElementById('questionSection').classList.add('active');
@@ -502,9 +372,10 @@
             
             document.getElementById('currentQuestion').textContent = currentQuestionIndex + 1;
             document.getElementById('currentScore').textContent = score;
-            document.getElementById('categoryIndicator').textContent = question.category;
+            document.getElementById('categoryIndicator').textContent = question.category || 'General';
             document.getElementById('questionText').textContent = question.question;
             document.getElementById('nextBtn').classList.remove('show');
+            document.getElementById('explanation').classList.remove('show');
             
             const answersGrid = document.getElementById('answersGrid');
             answersGrid.innerHTML = '';
@@ -536,6 +407,13 @@
             
             // Disable all buttons
             buttons.forEach(btn => btn.style.pointerEvents = 'none');
+            
+            // Show explanation if available
+            if (question.explanation) {
+                const explanationDiv = document.getElementById('explanation');
+                explanationDiv.textContent = question.explanation;
+                explanationDiv.classList.add('show');
+            }
             
             // Show next button after animation
             setTimeout(() => {
@@ -570,6 +448,16 @@
         }
 
         function restartGame() {
+            if (currentDifficulty) {
+                selectDifficulty(currentDifficulty);
+            } else {
+                showDifficultySelector();
+                document.getElementById('questionSection').classList.remove('active');
+                document.getElementById('gameOver').classList.remove('show');
+            }
+        }
+
+        function showDifficultySelector() {
             document.getElementById('questionSection').classList.remove('active');
             document.getElementById('gameOver').classList.remove('show');
             document.querySelectorAll('.difficulty-btn').forEach(btn => btn.classList.remove('active'));
