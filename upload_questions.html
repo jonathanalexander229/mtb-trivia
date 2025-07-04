@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Questions to Firebase</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        button:disabled {
+            background: #cccccc;
+            cursor: not-allowed;
+        }
+        .status {
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        .progress {
+            width: 100%;
+            height: 20px;
+            background: #f0f0f0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        .progress-bar {
+            height: 100%;
+            background: #4CAF50;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔥 Upload Questions to Firebase</h1>
+        <p>This will load questions from trivia_db.json and upload them to Firebase.</p>
+        
+        <div id="status"></div>
+        
+        <button id="uploadBtn" onclick="uploadQuestions()">
+            📤 Upload Questions to Firebase
+        </button>
+        
+        <div id="progressContainer" style="display: none;">
+            <div class="progress">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <p id="progressText">Uploading...</p>
+        </div>
+        
+        <div id="results"></div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    
+    <script>
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAnGrb3rmjzPglId6bBTQXis6UiPWMyxc4",
+            authDomain: "mtb-trivia.firebaseapp.com",
+            projectId: "mtb-trivia",
+            storageBucket: "mtb-trivia.firebasestorage.app",
+            messagingSenderId: "892514249212",
+            appId: "1:892514249212:web:97405f8847d1547172aa79",
+            measurementId: "G-ZHVMX5TPES"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        function showStatus(message, type = 'info') {
+            const statusDiv = document.getElementById('status');
+            statusDiv.innerHTML = `<div class="status ${type}">${message}</div>`;
+        }
+
+        function updateProgress(current, total) {
+            const progressContainer = document.getElementById('progressContainer');
+            const progressBar = document.getElementById('progressBar');
+            const progressText = document.getElementById('progressText');
+            
+            progressContainer.style.display = 'block';
+            const percentage = (current / total) * 100;
+            progressBar.style.width = percentage + '%';
+            progressText.textContent = `Uploading... ${current}/${total} questions (${Math.round(percentage)}%)`;
+        }
+
+        async function uploadQuestions() {
+            const uploadBtn = document.getElementById('uploadBtn');
+            const resultsDiv = document.getElementById('results');
+            
+            uploadBtn.disabled = true;
+            uploadBtn.textContent = 'Loading...';
+            resultsDiv.innerHTML = '';
+            
+            try {
+                showStatus('Loading questions from trivia_db.json...', 'info');
+                
+                // Load questions from JSON file
+                const response = await fetch('trivia_db.json');
+                if (!response.ok) {
+                    throw new Error(`Failed to load trivia_db.json: ${response.status}`);
+                }
+                
+                const questionsData = await response.json();
+                showStatus('Questions loaded successfully!', 'success');
+                
+                // Count total questions
+                const totalQuestions = questionsData.questions.easy.length + 
+                                     questionsData.questions.medium.length + 
+                                     questionsData.questions.hard.length;
+                
+                showStatus(`Found ${totalQuestions} questions. Starting upload...`, 'info');
+                
+                let uploaded = 0;
+                let skipped = 0;
+                let updated = 0;
+                const batch = db.batch();
+                const results = {
+                    easy: 0,
+                    medium: 0,
+                    hard: 0,
+                    skipped: 0,
+                    updated: 0,
+                    errors: []
+                };
+                
+                // Upload questions from each difficulty
+                for (const [difficulty, questions] of Object.entries(questionsData.questions)) {
+                    for (const question of questions) {
+                        try {
+                            // Create document reference with the question ID
+                            const docRef = db.collection('questions').doc(question.id);
+                            
+                            // Check if document exists and compare
+                            const existingDoc = await docRef.get();
+                            
+                            // Prepare question data
+                            const questionData = {
+                                category: question.category,
+                                question: question.question,
+                                answers: question.answers,
+                                correct: question.correct,
+                                explanation: question.explanation || '',
+                                difficulty: difficulty,
+                                upvotes: 0,
+                                downvotes: 0
+                            };
+                            
+                            if (existingDoc.exists) {
+                                const existingData = existingDoc.data();
+                                
+                                // Compare key fields (exclude timestamps and vote counts)
+                                const fieldsToCompare = ['category', 'question', 'answers', 'correct', 'explanation', 'difficulty'];
+                                const isDifferent = fieldsToCompare.some(field => {
+                                    if (field === 'answers') {
+                                        return JSON.stringify(existingData[field]) !== JSON.stringify(questionData[field]);
+                                    }
+                                    return existingData[field] !== questionData[field];
+                                });
+                                
+                                if (isDifferent) {
+                                    // Preserve existing upvotes/downvotes but update other fields
+                                    questionData.upvotes = existingData.upvotes || 0;
+                                    questionData.downvotes = existingData.downvotes || 0;
+                                    questionData.updated_at = firebase.firestore.FieldValue.serverTimestamp();
+                                    
+                                    batch.set(docRef, questionData);
+                                    results[difficulty]++;
+                                    updated++;
+                                    
+                                    console.log(`Updated question ${question.id} - content changed`);
+                                } else {
+                                    // Question is identical, skip it
+                                    skipped++;
+                                    results.skipped++;
+                                    console.log(`Skipped question ${question.id} - identical content`);
+                                }
+                            } else {
+                                // New question, add timestamp
+                                questionData.created_at = firebase.firestore.FieldValue.serverTimestamp();
+                                batch.set(docRef, questionData);
+                                results[difficulty]++;
+                                uploaded++;
+                                
+                                console.log(`Added new question ${question.id}`);
+                            }
+                            
+                            updateProgress(uploaded + skipped + updated, totalQuestions);
+                            
+                        } catch (error) {
+                            console.error(`Error processing question ${question.id}:`, error);
+                            results.errors.push(`${question.id}: ${error.message}`);
+                        }
+                    }
+                }
+                
+                // Commit the batch
+                showStatus('Committing questions to Firebase...', 'info');
+                await batch.commit();
+                
+                // Show results
+                showStatus('Upload completed successfully!', 'success');
+                
+                const resultsHTML = `
+                    <h3>Upload Results:</h3>
+                    <ul>
+                        <li><strong>Easy:</strong> ${results.easy} questions processed</li>
+                        <li><strong>Medium:</strong> ${results.medium} questions processed</li>
+                        <li><strong>Hard:</strong> ${results.hard} questions processed</li>
+                        <li><strong>New questions added:</strong> ${uploaded}</li>
+                        <li><strong>Existing questions updated:</strong> ${updated}</li>
+                        <li><strong>Identical questions skipped:</strong> ${results.skipped}</li>
+                        <li><strong>Total processed:</strong> ${uploaded + updated + results.skipped} questions</li>
+                    </ul>
+                    ${results.errors.length > 0 ? 
+                        `<h4>Errors:</h4><ul>${results.errors.map(err => `<li>${err}</li>`).join('')}</ul>` : 
+                        '<p style="color: green;">No errors!</p>'
+                    }
+                `;
+                
+                resultsDiv.innerHTML = resultsHTML;
+                
+            } catch (error) {
+                console.error('Upload error:', error);
+                showStatus(`Upload failed: ${error.message}`, 'error');
+            } finally {
+                uploadBtn.disabled = false;
+                uploadBtn.textContent = '📤 Upload Questions to Firebase';
+                document.getElementById('progressContainer').style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

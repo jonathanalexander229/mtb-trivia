@@ -428,7 +428,7 @@
 
         <div class="question-section" id="questionSection">
             <div class="score-info">
-                <span>Question: <span id="currentQuestion">1</span>/10</span>
+                <span>Question: <span id="currentQuestion">1</span>/<span id="totalQuestions">10</span></span>
                 <span>Score: <span id="currentScore">0</span></span>
             </div>
 
@@ -758,8 +758,8 @@
             gameQuestions = [...questionsDB.questions[difficulty]];
             shuffleArray(gameQuestions);
             
-            // Limit to 10 questions max
-            gameQuestions = gameQuestions.slice(0, Math.min(10, gameQuestions.length));
+            // Use all available questions for this difficulty
+            // gameQuestions already contains all questions from Firebase
             
             // Show question section
             document.getElementById('questionSection').classList.add('active');
@@ -786,6 +786,7 @@
             currentQuestionId = question.id || null;
             
             document.getElementById('currentQuestion').textContent = currentQuestionIndex + 1;
+            document.getElementById('totalQuestions').textContent = gameQuestions.length;
             document.getElementById('currentScore').textContent = score;
             document.getElementById('categoryIndicator').textContent = question.category || 'General';
             const questionTextElement = document.getElementById('questionText');
