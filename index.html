@@ -758,8 +758,14 @@
             gameQuestions = [...questionsDB.questions[difficulty]];
             shuffleArray(gameQuestions);
             
-            // Use all available questions for this difficulty
-            // gameQuestions already contains all questions from Firebase
+            // Set question count based on difficulty
+            const questionCounts = {
+                easy: 5,
+                medium: 10,
+                hard: gameQuestions.length // Use all available hard questions
+            };
+            const maxQuestions = questionCounts[difficulty] || 10;
+            gameQuestions = gameQuestions.slice(0, Math.min(maxQuestions, gameQuestions.length));
             
             // Show question section
             document.getElementById('questionSection').classList.add('active');
