@@ -463,16 +463,9 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     
     <script>
-        // Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyAnGrb3rmjzPglId6bBTQXis6UiPWMyxc4",
-            authDomain: "mtb-trivia.firebaseapp.com",
-            projectId: "mtb-trivia",
-            storageBucket: "mtb-trivia.firebasestorage.app",
-            messagingSenderId: "892514249212",
-            appId: "1:892514249212:web:97405f8847d1547172aa79",
-            measurementId: "G-ZHVMX5TPES"
-        };
+        // Firebase configuration (Base64 encoded)
+        const encodedConfig = "eyJhcGlLZXkiOiJBSXphU3lBbkdyYjNybWp6UGdsSWQ2YkJUUVhpczZVaVBXTXl4YzQiLCJhdXRoRG9tYWluIjoibXRiLXRyaXZpYS5maXJlYmFzZWFwcC5jb20iLCJwcm9qZWN0SWQiOiJtdGItdHJpdmlhIiwic3RvcmFnZUJ1Y2tldCI6Im10Yi10cml2aWEuZmlyZWJhc2VzdG9yYWdlLmFwcCIsIm1lc3NhZ2luZ1NlbmRlcklkIjoiODkyNTE0MjQ5MjEyIiwiYXBwSWQiOiIxOjg5MjUxNDI0OTIxMjp3ZWI6YjE3MTExMTA2MjkwNDMyNzcyYWE3OSIsIm1lYXN1cmVtZW50SWQiOiJHLTkxNkxRUks2QzcifQo=";
+        const firebaseConfig = JSON.parse(atob(encodedConfig));
 
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
