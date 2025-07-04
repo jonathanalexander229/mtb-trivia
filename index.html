@@ -823,6 +823,12 @@
                 btn.style.pointerEvents = 'auto';
             });
             
+            // Reset vote button text
+            const upvoteBtn = document.querySelector('.vote-btn.upvote');
+            const downvoteBtn = document.querySelector('.vote-btn.downvote');
+            if (upvoteBtn) upvoteBtn.innerHTML = '👍 Good Question';
+            if (downvoteBtn) downvoteBtn.innerHTML = '👎 Poor Question';
+            
             const answersGrid = document.getElementById('answersGrid');
             answersGrid.innerHTML = '';
             
