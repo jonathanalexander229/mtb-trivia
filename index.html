@@ -145,8 +145,8 @@
         .question-card {
             background: rgba(255, 255, 255, 0.1);
             border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 20px;
+            padding: 35px;
+            margin-bottom: 30px;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
@@ -172,21 +172,24 @@
         .answers-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-bottom: 20px;
+            gap: 15px;
+            margin: 25px 0;
         }
 
         .answer-btn {
             background: rgba(255, 255, 255, 0.1);
             color: white;
             border: 2px solid rgba(255, 255, 255, 0.3);
-            padding: 15px 20px;
+            padding: 18px 22px;
             border-radius: 8px;
             font-size: 1em;
             cursor: pointer;
             transition: all 0.3s ease;
             text-align: left;
             word-wrap: break-word;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
         }
 
         .answer-btn:hover {
@@ -259,6 +262,88 @@
         .next-btn:hover {
             background: linear-gradient(135deg, #f7931e 0%, #e8851d 100%);
             transform: translateY(-2px);
+        }
+
+        .vote-section {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .vote-section.show {
+            opacity: 1;
+        }
+
+        .vote-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9em;
+        }
+
+        .vote-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-1px);
+        }
+
+        .vote-btn.upvote:hover {
+            border-color: #4CAF50;
+            color: #4CAF50;
+        }
+
+        .vote-btn.downvote:hover {
+            border-color: #f44336;
+            color: #f44336;
+        }
+
+        .vote-btn.voted {
+            background: rgba(255, 255, 255, 0.3);
+            pointer-events: none;
+        }
+
+        .edit-mode-indicator {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 107, 53, 0.9);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            z-index: 1000;
+        }
+
+        .editable {
+            border: 2px dashed rgba(255, 107, 53, 0.5);
+            padding: 5px;
+            border-radius: 5px;
+            background: rgba(255, 107, 53, 0.1);
+        }
+
+        .save-btn {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 5px;
+            font-size: 0.8em;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .save-btn:hover {
+            background: #45a049;
         }
 
         .game-over {
@@ -352,6 +437,14 @@
                 <div class="question-text" id="questionText"></div>
                 <div class="answers-grid" id="answersGrid"></div>
                 <div class="explanation" id="explanation"></div>
+                <div class="vote-section" id="voteSection">
+                    <button class="vote-btn upvote" onclick="voteQuestion('up')">
+                        👍 Good Question
+                    </button>
+                    <button class="vote-btn downvote" onclick="voteQuestion('down')">
+                        👎 Poor Question
+                    </button>
+                </div>
                 <button class="next-btn" id="nextBtn" onclick="nextQuestion()">Next Question</button>
             </div>
         </div>
@@ -365,7 +458,26 @@
         </div>
     </div>
 
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    
     <script>
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAnGrb3rmjzPglId6bBTQXis6UiPWMyxc4",
+            authDomain: "mtb-trivia.firebaseapp.com",
+            projectId: "mtb-trivia",
+            storageBucket: "mtb-trivia.firebasestorage.app",
+            messagingSenderId: "892514249212",
+            appId: "1:892514249212:web:97405f8847d1547172aa79",
+            measurementId: "G-ZHVMX5TPES"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        
         // Global variables
         let questionsDB = null;
         let currentDifficulty = '';
@@ -373,6 +485,8 @@
         let score = 0;
         let gameQuestions = [];
         let answered = false;
+        let currentQuestionId = null;
+        let editMode = false;
 
         // Default questions database (fallback)
         const defaultQuestionsDB = {
@@ -517,28 +631,63 @@
 
         // Initialize the game
         document.addEventListener('DOMContentLoaded', function() {
+            // Check for UCI DH secret parameter
+            const params = new URLSearchParams(window.location.search);
+            if (params.get('ucidh') === '1990') {
+                editMode = true;
+                showEditModeIndicator();
+            }
+            
             loadQuestionsFromFile();
         });
 
+        function showEditModeIndicator() {
+            const indicator = document.createElement('div');
+            indicator.className = 'edit-mode-indicator';
+            indicator.innerHTML = '🔧 UCI DH Edit Mode';
+            document.body.appendChild(indicator);
+        }
+
         async function loadQuestionsFromFile() {
             try {
-                const response = await fetch('trivia_db.json');
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                const jsonData = await response.json();
+                // Try to load from Firebase first
+                const snapshot = await db.collection('questions').get();
+                const firebaseQuestions = {easy: [], medium: [], hard: []};
                 
-                if (validateQuestionsDB(jsonData)) {
-                    questionsDB = jsonData;
+                snapshot.forEach(doc => {
+                    const data = doc.data();
+                    if (firebaseQuestions[data.difficulty]) {
+                        firebaseQuestions[data.difficulty].push({
+                            id: doc.id,  // Include the document ID
+                            ...data
+                        });
+                    }
+                });
+                
+                if (!snapshot.empty) {
+                    questionsDB = {
+                        version: "firebase",
+                        questions: firebaseQuestions,
+                        metadata: {
+                            total_questions: snapshot.size,
+                            questions_by_difficulty: {
+                                easy: firebaseQuestions.easy.length,
+                                medium: firebaseQuestions.medium.length,
+                                hard: firebaseQuestions.hard.length
+                            }
+                        }
+                    };
                     showDBInfo();
                     showDifficultySelector();
-                } else {
-                    throw new Error('Invalid question database format');
+                    return;
                 }
             } catch (error) {
-                console.warn('Could not load trivia_db.json, using default questions:', error);
-                loadDefaultQuestions();
+                console.warn('Could not load from Firebase:', error);
             }
+            
+            // Fallback to default questions
+            console.log('Using default questions');
+            loadDefaultQuestions();
         }
 
         function loadDefaultQuestions() {
@@ -634,13 +783,45 @@
 
             const question = gameQuestions[currentQuestionIndex];
             answered = false;
+            currentQuestionId = question.id || null;
             
             document.getElementById('currentQuestion').textContent = currentQuestionIndex + 1;
             document.getElementById('currentScore').textContent = score;
             document.getElementById('categoryIndicator').textContent = question.category || 'General';
-            document.getElementById('questionText').textContent = question.question;
+            const questionTextElement = document.getElementById('questionText');
+            questionTextElement.textContent = question.question;
+            
+            // Enable editing if in edit mode
+            if (editMode && currentQuestionId) {
+                questionTextElement.contentEditable = true;
+                questionTextElement.className = 'editable';
+                questionTextElement.onblur = () => saveQuestionEdit();
+                
+                // Add save button if not already there
+                if (!document.getElementById('saveQuestionBtn')) {
+                    const saveBtn = document.createElement('button');
+                    saveBtn.id = 'saveQuestionBtn';
+                    saveBtn.className = 'save-btn';
+                    saveBtn.textContent = 'Save';
+                    saveBtn.onclick = saveQuestionEdit;
+                    questionTextElement.parentNode.appendChild(saveBtn);
+                }
+            } else {
+                questionTextElement.contentEditable = false;
+                questionTextElement.className = '';
+                const saveBtn = document.getElementById('saveQuestionBtn');
+                if (saveBtn) saveBtn.remove();
+            }
+            
             document.getElementById('nextBtn').classList.remove('show');
             document.getElementById('explanation').classList.remove('show');
+            document.getElementById('voteSection').classList.remove('show');
+            
+            // Reset vote buttons
+            document.querySelectorAll('.vote-btn').forEach(btn => {
+                btn.classList.remove('voted');
+                btn.style.pointerEvents = 'auto';
+            });
             
             const answersGrid = document.getElementById('answersGrid');
             answersGrid.innerHTML = '';
@@ -649,9 +830,29 @@
                 const button = document.createElement('button');
                 button.className = 'answer-btn';
                 button.textContent = answer;
-                button.onclick = () => selectAnswer(index);
+                
+                if (editMode && currentQuestionId) {
+                    // Make answer editable
+                    button.contentEditable = true;
+                    button.classList.add('editable');
+                    button.onblur = () => saveAnswerEdit(index);
+                    button.onclick = (e) => {
+                        e.preventDefault(); // Prevent answer selection when editing
+                        button.focus();
+                    };
+                } else {
+                    button.onclick = () => selectAnswer(index);
+                }
+                
                 answersGrid.appendChild(button);
             });
+            
+            // In edit mode, show next button immediately since we're not "answering"
+            if (editMode && currentQuestionId) {
+                setTimeout(() => {
+                    document.getElementById('nextBtn').classList.add('show');
+                }, 500);
+            }
         }
 
         function selectAnswer(selectedIndex) {
@@ -680,10 +881,137 @@
                 explanationDiv.classList.add('show');
             }
             
-            // Show next button after animation
+            // Show vote section and next button after animation
             setTimeout(() => {
+                // Only show vote section if not in edit mode and question has ID
+                if (!editMode && currentQuestionId) {
+                    document.getElementById('voteSection').classList.add('show');
+                }
                 document.getElementById('nextBtn').classList.add('show');
             }, 1000);
+        }
+
+        async function voteQuestion(voteType) {
+            console.log('Vote clicked:', voteType, 'Question ID:', currentQuestionId);
+            
+            if (!currentQuestionId) {
+                console.warn('No question ID available for voting');
+                alert('Cannot vote - no question ID');
+                return;
+            }
+            
+            try {
+                const questionRef = db.collection('questions').doc(currentQuestionId);
+                const doc = await questionRef.get();
+                
+                if (doc.exists) {
+                    const data = doc.data();
+                    const currentUpvotes = data.upvotes || 0;
+                    const currentDownvotes = data.downvotes || 0;
+                    
+                    const updateData = {};
+                    if (voteType === 'up') {
+                        updateData.upvotes = currentUpvotes + 1;
+                    } else {
+                        updateData.downvotes = currentDownvotes + 1;
+                    }
+                    
+                    await questionRef.update(updateData);
+                    
+                    // Mark vote buttons as voted
+                    document.querySelectorAll('.vote-btn').forEach(btn => {
+                        btn.classList.add('voted');
+                        btn.style.pointerEvents = 'none';
+                    });
+                    
+                    // Update button text to show vote was recorded
+                    const voteBtn = document.querySelector(`.vote-btn.${voteType}vote`);
+                    if (voteBtn) {
+                        voteBtn.innerHTML = voteType === 'up' ? '👍 Voted!' : '👎 Voted!';
+                    }
+                    
+                    console.log(`${voteType} vote recorded for question ${currentQuestionId}`);
+                } else {
+                    console.warn('Question not found in database');
+                }
+            } catch (error) {
+                console.error('Error voting on question:', error);
+                alert('Error recording vote');
+            }
+        }
+
+        async function saveQuestionEdit() {
+            if (!currentQuestionId || !editMode) return;
+            
+            try {
+                const newQuestionText = document.getElementById('questionText').textContent.trim();
+                if (!newQuestionText) {
+                    alert('Question cannot be empty');
+                    return;
+                }
+                
+                await db.collection('questions').doc(currentQuestionId).update({
+                    question: newQuestionText
+                });
+                
+                // Update local data
+                gameQuestions[currentQuestionIndex].question = newQuestionText;
+                
+                console.log('Question updated successfully');
+                
+                // Visual feedback
+                const saveBtn = document.getElementById('saveQuestionBtn');
+                if (saveBtn) {
+                    saveBtn.textContent = 'Saved!';
+                    saveBtn.style.background = '#4CAF50';
+                    setTimeout(() => {
+                        saveBtn.textContent = 'Save';
+                        saveBtn.style.background = '';
+                    }, 2000);
+                }
+                
+            } catch (error) {
+                console.error('Error updating question:', error);
+                alert('Error saving question');
+            }
+        }
+
+        async function saveAnswerEdit(answerIndex) {
+            if (!currentQuestionId || !editMode) return;
+            
+            try {
+                const answerButtons = document.querySelectorAll('.answer-btn');
+                const newAnswerText = answerButtons[answerIndex].textContent.trim();
+                
+                if (!newAnswerText) {
+                    alert('Answer cannot be empty');
+                    answerButtons[answerIndex].textContent = gameQuestions[currentQuestionIndex].answers[answerIndex];
+                    return;
+                }
+                
+                // Update the answers array
+                const updatedAnswers = [...gameQuestions[currentQuestionIndex].answers];
+                updatedAnswers[answerIndex] = newAnswerText;
+                
+                await db.collection('questions').doc(currentQuestionId).update({
+                    answers: updatedAnswers
+                });
+                
+                // Update local data
+                gameQuestions[currentQuestionIndex].answers[answerIndex] = newAnswerText;
+                
+                console.log(`Answer ${answerIndex + 1} updated successfully`);
+                
+                // Visual feedback
+                answerButtons[answerIndex].style.background = 'rgba(76, 175, 80, 0.3)';
+                setTimeout(() => {
+                    answerButtons[answerIndex].style.background = '';
+                }, 2000);
+                
+            } catch (error) {
+                console.error('Error updating answer:', error);
+                alert('Error saving answer');
+            }
         }
 
         function nextQuestion() {

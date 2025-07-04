@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTB Trivia Admin</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #2c5530 0%, #4a7c4e 50%, #6b9b6f 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: white;
+        }
+
+        .admin-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .title {
+            font-size: 2.5em;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .nav-btn {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .nav-btn:hover {
+            background: #45a049;
+        }
+
+        .difficulty-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+
+        .tab-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .tab-btn.easy {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .tab-btn.medium {
+            background: #2196F3;
+            color: white;
+        }
+
+        .tab-btn.hard {
+            background: #333333;
+            color: white;
+        }
+
+        .tab-btn.active {
+            opacity: 0.8;
+            transform: scale(0.95);
+        }
+
+        .question-form {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+        }
+
+        .answers-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .add-btn {
+            background: #ff6b35;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .add-btn:hover {
+            background: #e8851d;
+        }
+
+        .questions-list {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .question-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .question-preview {
+            flex: 1;
+        }
+
+        .question-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .delete-btn {
+            background: #f44336;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .delete-btn:hover {
+            background: #da190b;
+        }
+
+        .vote-stats {
+            display: flex;
+            gap: 15px;
+            margin-top: 8px;
+            font-size: 0.9em;
+        }
+
+        .vote-stat {
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-weight: bold;
+        }
+
+        .upvote-stat {
+            background: rgba(76, 175, 80, 0.2);
+            color: #4CAF50;
+        }
+
+        .downvote-stat {
+            background: rgba(244, 67, 54, 0.2);
+            color: #f44336;
+        }
+
+        .vote-ratio {
+            color: #f7931e;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <div class="header">
+            <h1 class="title">🛠️ MTB Trivia Admin</h1>
+            <p>Manage trivia questions</p>
+            <a href="index.html" class="nav-btn">← Back to Game</a>
+        </div>
+
+        <div class="difficulty-tabs">
+            <button class="tab-btn easy active" onclick="switchDifficulty('easy')">Easy</button>
+            <button class="tab-btn medium" onclick="switchDifficulty('medium')">Medium</button>
+            <button class="tab-btn hard" onclick="switchDifficulty('hard')">Hard</button>
+        </div>
+
+        <div class="question-form">
+            <h3>Add New Question</h3>
+            <form id="questionForm">
+                <div class="form-group">
+                    <label>Category:</label>
+                    <select id="category">
+                        <option value="Parts">Parts</option>
+                        <option value="Manufacturers">Manufacturers</option>
+                        <option value="Suspension">Suspension</option>
+                        <option value="Riders">Riders</option>
+                        <option value="Races">Races</option>
+                        <option value="Venues">Venues</option>
+                        <option value="Design">Design</option>
+                        <option value="Trails">Trails</option>
+                        <option value="Accessories">Accessories</option>
+                        <option value="Lore">Lore</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Question:</label>
+                    <textarea id="question" rows="3" placeholder="Enter your question..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Answers:</label>
+                    <div class="answers-grid">
+                        <input type="text" id="answer1" placeholder="Answer 1">
+                        <input type="text" id="answer2" placeholder="Answer 2">
+                        <input type="text" id="answer3" placeholder="Answer 3">
+                        <input type="text" id="answer4" placeholder="Answer 4">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Correct Answer:</label>
+                    <select id="correctAnswer">
+                        <option value="0">Answer 1</option>
+                        <option value="1">Answer 2</option>
+                        <option value="2">Answer 3</option>
+                        <option value="3">Answer 4</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Explanation (optional):</label>
+                    <textarea id="explanation" rows="2" placeholder="Explain why this is correct..."></textarea>
+                </div>
+                
+                <button type="submit" class="add-btn">Add Question</button>
+            </form>
+        </div>
+
+        <div class="questions-list">
+            <h3>All Questions</h3>
+            <div id="questionsList"></div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    
+    <script>
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAnGrb3rmjzPglId6bBTQXis6UiPWMyxc4",
+            authDomain: "mtb-trivia.firebaseapp.com",
+            projectId: "mtb-trivia",
+            storageBucket: "mtb-trivia.firebasestorage.app",
+            messagingSenderId: "892514249212",
+            appId: "1:892514249212:web:97405f8847d1547172aa79",
+            measurementId: "G-ZHVMX5TPES"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        
+        let currentDifficulty = 'easy';
+        
+        // Default questions from the main game
+        const defaultQuestions = {
+            "easy": [
+                {
+                    "category": "Parts",
+                    "question": "What does 'MTB' stand for?",
+                    "answers": ["Mountain Trail Bike", "Mountain Bike", "Multi-Terrain Bicycle", "Motor Trail Bike"],
+                    "correct": 1,
+                    "explanation": "MTB is the common abbreviation for Mountain Bike."
+                },
+                {
+                    "category": "Manufacturers",
+                    "question": "Which company makes the 'Stumpjumper' mountain bike?",
+                    "answers": ["Giant", "Specialized", "Cannondale", "Scott"],
+                    "correct": 1,
+                    "explanation": "The Stumpjumper is Specialized's iconic mountain bike model."
+                },
+                {
+                    "category": "Parts",
+                    "question": "What part of the bike do you use to stop?",
+                    "answers": ["Pedals", "Handlebars", "Brakes", "Seat"],
+                    "correct": 2,
+                    "explanation": "Brakes are used to slow down and stop the bicycle."
+                },
+                {
+                    "category": "Accessories",
+                    "question": "What should you always wear when mountain biking for safety?",
+                    "answers": ["Sunglasses", "Helmet", "Gloves", "Knee pads"],
+                    "correct": 1,
+                    "explanation": "A helmet is essential safety equipment that protects your head."
+                },
+                {
+                    "category": "Events",
+                    "question": "What is Crankworx?",
+                    "answers": ["A bike part", "A mountain bike festival", "A trail name", "A riding technique"],
+                    "correct": 1,
+                    "explanation": "Crankworx is the world's largest mountain bike festival series."
+                }
+            ],
+            "medium": [
+                {
+                    "category": "Suspension",
+                    "question": "What does 'hardtail' mean in mountain biking?",
+                    "answers": ["Bike with front suspension only", "Bike with rear suspension only", "Bike with no suspension", "Bike with both front and rear suspension"],
+                    "correct": 0,
+                    "explanation": "A hardtail has front suspension but no rear suspension."
+                },
+                {
+                    "category": "Parts",
+                    "question": "What is a 'derailleur' used for?",
+                    "answers": ["Braking", "Steering", "Changing gears", "Suspension"],
+                    "correct": 2,
+                    "explanation": "The derailleur moves the chain between different gears."
+                },
+                {
+                    "category": "Riders",
+                    "question": "Who is considered one of the greatest downhill mountain bikers of all time?",
+                    "answers": ["Greg Minnaar", "Lance Armstrong", "Tony Hawk", "Usain Bolt"],
+                    "correct": 0,
+                    "explanation": "Greg Minnaar is a multiple-time Downhill World Champion."
+                },
+                {
+                    "category": "Events",
+                    "question": "Where was Crankworx mountain bike festival first held?",
+                    "answers": ["Whistler, Canada", "Moab, USA", "Chamonix, France", "Rotorua, New Zealand"],
+                    "correct": 0,
+                    "explanation": "Crankworx began in Whistler, British Columbia in 2004."
+                },
+                {
+                    "category": "Parts",
+                    "question": "What is a 'dropper post'?",
+                    "answers": ["A post that drops the bike", "An adjustable height seat post", "A brake component", "A gear shifter"],
+                    "correct": 1,
+                    "explanation": "A dropper post allows you to adjust saddle height while riding."
+                }
+            ],
+            "hard": [
+                {
+                    "category": "Suspension",
+                    "question": "What is the difference between air and coil suspension?",
+                    "answers": ["Air is lighter, coil is more consistent", "Coil is lighter, air is heavier", "No difference", "Air is only for rear, coil for front"],
+                    "correct": 0,
+                    "explanation": "Air shocks are lighter and adjustable, while coil shocks provide more consistent performance."
+                },
+                {
+                    "category": "History",
+                    "question": "Who designed the first Specialized Stumpjumper frame?",
+                    "answers": ["Mike Sinyard", "Tim Neenan", "Gary Fisher", "Tom Ritchey"],
+                    "correct": 1,
+                    "explanation": "Tim Neenan designed the original Stumpjumper frame for Specialized."
+                },
+                {
+                    "category": "Records",
+                    "question": "What is the fastest recorded speed on a mountain bike?",
+                    "answers": ["138 mph", "141 mph", "156 mph", "164 mph"],
+                    "correct": 1,
+                    "explanation": "Eric Barone set the record at 141 mph in 2017 on a snowy ski slope."
+                },
+                {
+                    "category": "Events",
+                    "question": "What is the 'Triple Crown of Slopestyle' at Crankworx?",
+                    "answers": ["Winning 3 events in a season", "Winning 3 years in a row", "3 different trick categories", "3 different locations"],
+                    "correct": 0,
+                    "explanation": "The Triple Crown requires winning all three Crankworx slopestyle events in one season."
+                },
+                {
+                    "category": "Technology",
+                    "question": "What is Specialized's GENIE shock technology?",
+                    "answers": ["Electronic damping", "Dual air chambers with PSA spring", "Coil-over design", "Magnetic damping"],
+                    "correct": 1,
+                    "explanation": "GENIE features dual air chambers with a Progressive Spring Assistant (PSA)."
+                }
+            ]
+        };
+
+        let questions = {easy: [], medium: [], hard: []};
+        
+        // Load questions from Firebase
+        async function loadQuestions() {
+            try {
+                const snapshot = await db.collection('questions').get();
+                const firebaseQuestions = {easy: [], medium: [], hard: []};
+                
+                snapshot.forEach(doc => {
+                    const data = doc.data();
+                    if (firebaseQuestions[data.difficulty]) {
+                        firebaseQuestions[data.difficulty].push({
+                            id: doc.id,
+                            ...data
+                        });
+                    }
+                });
+                
+                // If no questions in Firebase, use defaults
+                if (snapshot.empty) {
+                    console.log('No questions found, adding defaults...');
+                    await addDefaultQuestions();
+                } else {
+                    questions = firebaseQuestions;
+                }
+                
+                displayQuestions();
+            } catch (error) {
+                console.error('Error loading questions:', error);
+                alert('Error loading questions. Using defaults.');
+                questions = defaultQuestions;
+                displayQuestions();
+            }
+        }
+        
+        // Add default questions to Firebase
+        async function addDefaultQuestions() {
+            try {
+                for (const [difficulty, questionList] of Object.entries(defaultQuestions)) {
+                    for (const question of questionList) {
+                        await db.collection('questions').add({
+                            ...question,
+                            difficulty: difficulty
+                        });
+                    }
+                }
+                console.log('Default questions added to Firebase');
+                loadQuestions(); // Reload after adding defaults
+            } catch (error) {
+                console.error('Error adding default questions:', error);
+            }
+        }
+
+        function switchDifficulty(difficulty) {
+            currentDifficulty = difficulty;
+            
+            // Update active tab
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`.tab-btn.${difficulty}`).classList.add('active');
+            
+            // Update title
+            const titles = { easy: 'Easy', medium: 'Medium', hard: 'Hard' };
+            document.getElementById('questionsTitle').textContent = `${titles[difficulty]} Questions`;
+            
+            // Refresh questions list
+            displayQuestions();
+        }
+
+        function displayQuestions() {
+            const list = document.getElementById('questionsList');
+            let allQuestions = [];
+            
+            // Collect all questions from all difficulties
+            Object.keys(questions).forEach(difficulty => {
+                questions[difficulty].forEach((q, index) => {
+                    allQuestions.push({
+                        ...q,
+                        difficulty: difficulty,
+                        originalIndex: index
+                    });
+                });
+            });
+            
+            if (allQuestions.length === 0) {
+                list.innerHTML = '<p>No questions yet. Add some!</p>';
+                return;
+            }
+            
+            // Group by difficulty for display
+            const groupedHTML = Object.keys(questions).map(difficulty => {
+                const difficultyQuestions = questions[difficulty];
+                if (difficultyQuestions.length === 0) return '';
+                
+                const difficultyColors = {
+                    easy: '#4CAF50',
+                    medium: '#2196F3', 
+                    hard: '#333333'
+                };
+                
+                return `
+                    <div style="margin-bottom: 30px;">
+                        <h4 style="color: ${difficultyColors[difficulty]}; margin-bottom: 15px; text-transform: capitalize;">${difficulty} Questions (${difficultyQuestions.length})</h4>
+                        ${difficultyQuestions.map((q, index) => {
+                            const upvotes = q.upvotes || 0;
+                            const downvotes = q.downvotes || 0;
+                            const totalVotes = upvotes + downvotes;
+                            const ratio = totalVotes > 0 ? Math.round((upvotes / totalVotes) * 100) : 0;
+                            
+                            return `
+                            <div class="question-item">
+                                <div class="question-preview">
+                                    <strong>${q.category}</strong>: ${q.question}
+                                    <br><small>Answers: ${q.answers.join(', ')}</small>
+                                    <br><small>Correct: ${q.answers[q.correct]}</small>
+                                    <div class="vote-stats">
+                                        <span class="vote-stat upvote-stat">👍 ${upvotes}</span>
+                                        <span class="vote-stat downvote-stat">👎 ${downvotes}</span>
+                                        ${totalVotes > 0 ? `<span class="vote-ratio">${ratio}% positive</span>` : '<span class="vote-ratio">No votes yet</span>'}
+                                    </div>
+                                </div>
+                                <div class="question-actions">
+                                    <button class="delete-btn" onclick="deleteQuestion('${difficulty}', ${index})">Delete</button>
+                                </div>
+                            </div>
+                        `;
+                        }).join('')}
+                    </div>
+                `;
+            }).join('');
+            
+            list.innerHTML = groupedHTML;
+        }
+
+        async function deleteQuestion(difficulty, index) {
+            if (confirm('Are you sure you want to delete this question?')) {
+                try {
+                    const questionToDelete = questions[difficulty][index];
+                    if (questionToDelete.id) {
+                        await db.collection('questions').doc(questionToDelete.id).delete();
+                        console.log('Question deleted from Firebase');
+                    }
+                    questions[difficulty].splice(index, 1);
+                    displayQuestions();
+                } catch (error) {
+                    console.error('Error deleting question:', error);
+                    alert('Error deleting question');
+                }
+            }
+        }
+
+        document.getElementById('questionForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const newQuestion = {
+                category: document.getElementById('category').value,
+                question: document.getElementById('question').value,
+                answers: [
+                    document.getElementById('answer1').value,
+                    document.getElementById('answer2').value,
+                    document.getElementById('answer3').value,
+                    document.getElementById('answer4').value
+                ],
+                correct: parseInt(document.getElementById('correctAnswer').value),
+                explanation: document.getElementById('explanation').value,
+                difficulty: currentDifficulty
+            };
+            
+            // Basic validation
+            if (!newQuestion.question || newQuestion.answers.some(a => !a)) {
+                alert('Please fill in all required fields');
+                return;
+            }
+            
+            try {
+                const docRef = await db.collection('questions').add(newQuestion);
+                newQuestion.id = docRef.id;
+                questions[currentDifficulty].push(newQuestion);
+                displayQuestions();
+                
+                // Reset form
+                this.reset();
+                
+                alert('Question added successfully!');
+            } catch (error) {
+                console.error('Error adding question:', error);
+                alert('Error adding question');
+            }
+        });
+
+        // Initialize
+        loadQuestions();
+    </script>
+</body>
+</html>
