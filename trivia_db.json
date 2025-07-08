@@ -283,7 +283,7 @@
         "question": "How many World Championship titles did the legendary Nico Vouilloz win?",
         "answers": ["10 titles - a record that still stands tall", "8 titles - an impressive achievement", "12 titles - the ultimate domination", "6 titles - a solid championship run"],
         "correct": 0,
-        "explanation": "Nico Vouilloz won 10 World Championship titles during his legendary career, making him one of the most successful mountain bike racers ever."
+        "explanation": "Nico Vouilloz won 10 total World Championship titles during his career: 7 Elite Men's Downhill titles (1995-2002) plus 3 Junior titles, making him one of the most successful mountain bike racers ever."
       },
       {
         "id": "medium_004",
@@ -408,10 +408,10 @@
       {
         "id": "medium_019",
         "category": "Riders",
-        "question": "Who holds the record for most Downhill World Championship wins?",
-        "answers": ["Greg Minnaar - the South African legend", "Aaron Gwin - the American speedster", "Steve Peat - the British bulldozer", "Fabien Barel - the French flyer"],
+        "question": "Who holds the record for most Elite Downhill World Championship wins?",
+        "answers": ["Nico Vouilloz with 7 titles - the French dominator", "Greg Minnaar with 4 titles - the South African legend", "Aaron Gwin with 1 title - the American speedster", "Steve Peat with 1 title - the British bulldozer"],
         "correct": 0,
-        "explanation": "Greg Minnaar holds the record for most Downhill World Championship wins among male riders."
+        "explanation": "Nico Vouilloz holds the record with 7 Elite Men's Downhill World Championship titles (1995-2002), while Greg Minnaar has 4 titles (2003, 2012, 2013, 2021)."
       },
       {
         "id": "medium_020",
@@ -515,9 +515,9 @@
         "id": "hard_002",
         "category": "Records",
         "question": "What's the longest dirt-to-dirt jump record on a mountain bike?",
-        "answers": ["43 meters by Fabiolous Escape in Austria", "36.49 meters by Cam Zink in Nevada", "45 meters by Brandon Semenuk in Utah", "40 meters by Kurt Sorge in Canada"],
+        "answers": ["36.5 meters by Cam Zink at Mammoth Mountain in 2014", "37 meters by Tom Isted at Darkfest in 2023", "35 meters by Kyle Strait in Utah", "34 meters by Brandon Semenuk at Rampage"],
         "correct": 0,
-        "explanation": "Fabiolous Escape made a 43-meter jump in Saalbach, Austria in 2018, breaking Cam Zink's previous record of 36.49 meters."
+        "explanation": "Cam Zink holds the official Guinness World Record at 36.5 meters (119 ft 9 in) set at Mammoth Mountain, California in 2014, though Tom Isted may have exceeded this in 2023."
       },
       {
         "id": "hard_003",
@@ -554,10 +554,10 @@
       {
         "id": "hard_007",
         "category": "History",
-        "question": "Who were the first people historically documented to use mountain bikes?",
-        "answers": ["Buffalo Soldiers in the 18th century", "Gold Rush miners in the 19th century", "Railroad workers in the early 1900s", "Forest Rangers in the 1920s"],
+        "question": "Who were the first people historically documented to use bicycles for off-road military expeditions?",
+        "answers": ["Buffalo Soldiers in the 1890s with modified road bicycles", "Confederate cavalry in the 1860s", "WWI messenger corps in the 1910s", "WWII paratroopers in the 1940s"],
         "correct": 0,
-        "explanation": "The Buffalo Soldiers were reportedly the first people to use mountain bikes, though these early versions lacked modern features like suspension and gearing."
+        "explanation": "The Buffalo Soldiers of the 25th Infantry used reinforced bicycles for a famous 1,900-mile expedition from Montana to Missouri in 1897, decades before modern mountain bikes were invented."
       },
       {
         "id": "hard_008",
