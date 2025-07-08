@@ -624,7 +624,7 @@
             const questionCounts = {
                 easy: 5,
                 medium: 10,
-                hard: gameQuestions.length // Use all available hard questions
+                hard: 15 // Limit hard questions to 15
             };
             const maxQuestions = questionCounts[difficulty] || 10;
             gameQuestions = gameQuestions.slice(0, Math.min(maxQuestions, gameQuestions.length));
@@ -641,6 +641,28 @@
                 const j = Math.floor(Math.random() * (i + 1));
                 [array[i], array[j]] = [array[j], array[i]];
             }
+        }
+
+        function shuffleAnswers(answers, correctIndex) {
+            // Create array of objects with answer and original index
+            const answersWithIndex = answers.map((answer, index) => ({
+                answer: answer,
+                originalIndex: index
+            }));
+            
+            // Shuffle the array
+            for (let i = answersWithIndex.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [answersWithIndex[i], answersWithIndex[j]] = [answersWithIndex[j], answersWithIndex[i]];
+            }
+            
+            // Find new position of correct answer
+            const newCorrectIndex = answersWithIndex.findIndex(item => item.originalIndex === correctIndex);
+            
+            return {
+                answers: answersWithIndex.map(item => item.answer),
+                correctIndex: newCorrectIndex
+            };
         }
 
         function loadQuestion() {
@@ -667,32 +689,35 @@
             const answersGrid = document.getElementById('answersGrid');
             answersGrid.innerHTML = '';
             
-            question.answers.forEach((answer, index) => {
+            // Create shuffled answers with correct answer tracking
+            const shuffledAnswers = shuffleAnswers(question.answers, question.correct);
+            
+            shuffledAnswers.answers.forEach((answer, index) => {
                 const button = document.createElement('button');
                 button.className = 'answer-btn';
                 button.textContent = answer;
                 
-                button.onclick = () => selectAnswer(index);
+                button.onclick = () => selectAnswer(index, shuffledAnswers.correctIndex);
                 
                 answersGrid.appendChild(button);
             });
             
         }
 
-        function selectAnswer(selectedIndex) {
+        function selectAnswer(selectedIndex, correctIndex) {
             if (answered) return;
             
             answered = true;
             const question = gameQuestions[currentQuestionIndex];
             const buttons = document.querySelectorAll('.answer-btn');
             
-            buttons[selectedIndex].classList.add(selectedIndex === question.correct ? 'correct' : 'incorrect');
+            buttons[selectedIndex].classList.add(selectedIndex === correctIndex ? 'correct' : 'incorrect');
             
-            if (selectedIndex === question.correct) {
+            if (selectedIndex === correctIndex) {
                 score++;
                 document.getElementById('currentScore').textContent = score;
             } else {
-                buttons[question.correct].classList.add('correct');
+                buttons[correctIndex].classList.add('correct');
             }
             
             // Disable all buttons
