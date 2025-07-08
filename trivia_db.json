@@ -1,6 +1,6 @@
 {
-  "version": "1.0",
-  "last_updated": "2025-07-02",
+  "version": "2.0",
+  "last_updated": "2025-07-07",
   "categories": [
     "Parts",
     "Manufacturers", 
@@ -21,392 +21,851 @@
     "easy": [
       {
         "id": "easy_001",
-        "category": "Parts",
-        "question": "What does 'MTB' stand for?",
-        "answers": ["Mountain Trail Bike", "Mountain Bike", "Multi-Terrain Bicycle", "Motor Trail Bike"],
-        "correct": 1,
-        "explanation": "MTB is the common abbreviation for Mountain Bike."
+        "category": "Manufacturers",
+        "question": "Which company proudly claims to make bikes for many other major brands behind the scenes?",
+        "answers": ["The mysterious frame whisperer known as Giant", "The secret bike wizard called Specialized", "The hidden craftsman named Trek", "The undercover builder called Cannondale"],
+        "correct": 0,
+        "explanation": "Giant is the world's largest bicycle manufacturer and makes frames for many other brands including Trek, Specialized, and others."
       },
       {
         "id": "easy_002",
-        "category": "Parts",
-        "question": "How many wheels does a standard mountain bike have?",
-        "answers": ["1", "2", "3", "4"],
-        "correct": 1,
-        "explanation": "Mountain bikes have two wheels, just like regular bicycles."
+        "category": "Suspension",
+        "question": "What's the key difference between a hardtail and a full-suspension mountain bike?",
+        "answers": ["Hardtails have a rigid rear triangle with front suspension only", "Hardtails have harder seats for tougher riders", "Hardtails have harder grips for better control", "Hardtails have harder pedals for more power"],
+        "correct": 0,
+        "explanation": "A hardtail has front suspension but no rear suspension, while a full-suspension bike has both front and rear suspension."
       },
       {
         "id": "easy_003",
-        "category": "Manufacturers",
-        "question": "Which of these is a famous mountain bike manufacturer?",
-        "answers": ["Trek", "Toyota", "Samsung", "Nike"],
+        "category": "Parts",
+        "question": "What does the derailleur do on a mountain bike?",
+        "answers": ["It moves the chain between gears like a mechanical ballet dancer", "It controls the brakes with precision timing", "It adjusts the suspension for different terrain", "It changes the tire pressure automatically"],
         "correct": 0,
-        "explanation": "Trek is one of the world's largest bicycle manufacturers."
+        "explanation": "The derailleur moves the chain between different gears on the cassette to change the bike's gear ratio."
       },
       {
         "id": "easy_004",
-        "category": "Parts",
-        "question": "What part of the bike do you use to stop?",
-        "answers": ["Pedals", "Handlebars", "Brakes", "Seat"],
-        "correct": 2,
-        "explanation": "Brakes are used to slow down and stop the bicycle."
+        "category": "Venues",
+        "question": "Which location is considered the undisputed king of downhill mountain biking?",
+        "answers": ["The legendary slopes of Whistler Bike Park", "The ancient trails of Moab desert", "The alpine routes of Chamonix", "The coastal paths of Santa Cruz"],
+        "correct": 0,
+        "explanation": "Whistler Bike Park in British Columbia is widely considered the world's premier downhill mountain biking destination."
       },
       {
         "id": "easy_005",
-        "category": "Accessories",
-        "question": "What should you always wear when mountain biking for safety?",
-        "answers": ["Sunglasses", "Helmet", "Gloves", "Knee pads"],
-        "correct": 1,
-        "explanation": "A helmet is essential safety equipment that protects your head."
+        "category": "Technology",
+        "question": "What's the main advantage of tubeless tires over traditional tube tires?",
+        "answers": ["They resist punctures better and can run lower pressure", "They make the bike completely silent when riding", "They automatically adjust pressure based on terrain", "They never need to be inflated or maintained"],
+        "correct": 0,
+        "explanation": "Tubeless tires use sealant instead of inner tubes, allowing them to self-seal small punctures and run at lower pressures for better traction."
       },
       {
         "id": "easy_006",
-        "category": "Parts",
-        "question": "What do you use to change gears on a mountain bike?",
-        "answers": ["Brakes", "Shifters", "Pedals", "Handlebars"],
-        "correct": 1,
-        "explanation": "Shifters control the derailleur to change gears."
+        "category": "History",
+        "question": "When did mountain biking first gain serious momentum as a sport?",
+        "answers": ["The rebellious 1970s when riders raced down Mount Tamalpais", "The adventurous 1960s during the hippie movement", "The competitive 1980s with the Olympics", "The extreme 1990s with X-Games popularity"],
+        "correct": 0,
+        "explanation": "Mountain bike racing began in October 1976 with the first Repack downhill races on Mt. Tamalpais in California."
       },
       {
         "id": "easy_007",
-        "category": "Trails",
-        "question": "What type of terrain are mountain bikes designed for?",
-        "answers": ["Smooth roads", "Off-road trails", "Swimming pools", "Ice rinks"],
-        "correct": 1,
-        "explanation": "Mountain bikes are specifically designed for off-road terrain."
+        "category": "Manufacturers",
+        "question": "What was the first mass-produced mountain bike ever made?",
+        "answers": ["The pioneering Specialized Stumpjumper from 1981", "The revolutionary Trek 850 from 1983", "The innovative Giant ATX from 1985", "The groundbreaking Cannondale SM500 from 1987"],
+        "correct": 0,
+        "explanation": "The Specialized Stumpjumper, designed by Tim Neenan, was the first mass-produced mountain bike in 1981."
       },
       {
         "id": "easy_008",
         "category": "Parts",
-        "question": "What connects the pedals to the bike?",
-        "answers": ["Chain", "Brakes", "Handlebars", "Seat"],
+        "question": "What's the purpose of a dropper post on a mountain bike?",
+        "answers": ["It allows you to adjust saddle height while riding", "It automatically drops the bike lower for cornering", "It releases the seat completely for crashes", "It drops water bottles when you're thirsty"],
         "correct": 0,
-        "explanation": "The chain transfers power from the pedals to the rear wheel."
+        "explanation": "A dropper post lets riders adjust their saddle height on the fly, lowering it for descents and raising it for climbs."
       },
       {
         "id": "easy_009",
-        "category": "Manufacturers",
-        "question": "Which company makes the 'Stumpjumper' mountain bike?",
-        "answers": ["Giant", "Specialized", "Cannondale", "Scott"],
-        "correct": 1,
-        "explanation": "The Stumpjumper is Specialized's iconic mountain bike model."
+        "category": "Trails",
+        "question": "What does 'singletrack' mean in mountain biking?",
+        "answers": ["A narrow trail wide enough for one bike at a time", "A trail with only one way to ride it", "A trail that goes in a single direction only", "A trail with a single steep climb"],
+        "correct": 0,
+        "explanation": "Singletrack refers to a narrow trail that can accommodate one bike at a time, as opposed to wider fire roads or double-track trails."
       },
       {
         "id": "easy_010",
-        "category": "Accessories",
-        "question": "What do you use to carry water while riding?",
-        "answers": ["Backpack", "Water bottle", "Helmet", "Gloves"],
-        "correct": 1,
-        "explanation": "Water bottles are the most common way to stay hydrated while riding."
+        "category": "Events",
+        "question": "What is Crankworx famous for in the mountain biking world?",
+        "answers": ["Being the world's largest mountain bike festival series", "Having the longest mountain bike race in history", "Being the oldest mountain bike competition", "Having the most expensive prize money"],
+        "correct": 0,
+        "explanation": "Crankworx is the world's largest mountain bike festival series, featuring multiple events across different locations."
       },
       {
         "id": "easy_011",
-        "category": "History",
-        "question": "When was the first mass-produced mountain bike made?",
-        "answers": ["1975", "1981", "1985", "1990"],
-        "correct": 1,
-        "explanation": "The Specialized Stumpjumper was first produced in 1981."
+        "category": "Suspension",
+        "question": "What does 'travel' refer to in mountain bike suspension?",
+        "answers": ["How far the suspension can compress and extend", "How far you can travel with the suspension", "How fast the suspension moves", "How much weight the suspension can carry"],
+        "correct": 0,
+        "explanation": "Travel is the distance the suspension can compress and extend, measured in millimeters or inches."
       },
       {
         "id": "easy_012",
         "category": "Parts",
-        "question": "What are the round things that spin on a mountain bike?",
-        "answers": ["Wheels", "Gears", "Pedals", "Chains"],
+        "question": "What are the typical modern mountain bike wheel sizes?",
+        "answers": ["27.5 inches or 29 inches for that perfect roll", "24 inches or 26 inches for classic style", "28 inches or 30 inches for maximum speed", "25 inches or 31 inches for unique handling"],
         "correct": 0,
-        "explanation": "Wheels are the circular components that allow the bike to roll."
+        "explanation": "Modern mountain bikes typically use 27.5-inch (650b) or 29-inch (29er) wheels, replacing the older 26-inch standard."
       },
       {
         "id": "easy_013",
-        "category": "Venues",
-        "question": "Which country is home to Whistler Bike Park?",
-        "answers": ["USA", "Canada", "Australia", "New Zealand"],
-        "correct": 1,
-        "explanation": "Whistler is located in British Columbia, Canada."
+        "category": "Races",
+        "question": "What does 'XC' stand for in mountain bike racing?",
+        "answers": ["Cross Country - the endurance test of fitness", "Extreme Competition - the ultimate challenge", "Extra Challenging - the hardest discipline", "X-treme Course - the most technical trails"],
+        "correct": 0,
+        "explanation": "XC stands for Cross Country, the endurance-oriented Olympic mountain bike racing discipline."
       },
       {
         "id": "easy_014",
-        "category": "Parts",
-        "question": "What do you sit on when riding a mountain bike?",
-        "answers": ["Handlebars", "Frame", "Saddle", "Pedals"],
-        "correct": 2,
-        "explanation": "The saddle (or seat) is where the rider sits."
+        "category": "Technology",
+        "question": "What's the main advantage of modern tubeless tire setups for mountain biking?",
+        "answers": ["They can self-seal small punctures and allow lower tire pressures", "They never require any maintenance or air pressure checks", "They automatically adjust pressure based on terrain conditions", "They eliminate the need for tire sealant completely"],
+        "correct": 0,
+        "explanation": "Tubeless tires use liquid sealant to automatically seal small punctures and can run at lower pressures for better traction without pinch flats."
       },
       {
         "id": "easy_015",
-        "category": "Events",
-        "question": "What is Crankworx?",
-        "answers": ["A bike part", "A mountain bike festival", "A trail name", "A riding technique"],
-        "correct": 1,
-        "explanation": "Crankworx is the world's largest mountain bike festival series."
+        "category": "Lore",
+        "question": "What does 'sending it' mean in mountain bike slang?",
+        "answers": ["Committing fully to a challenging feature or line", "Mailing your bike to a repair shop", "Sharing your ride data with friends", "Posting videos on social media"],
+        "correct": 0,
+        "explanation": "'Sending it' means fully committing to a challenging jump, drop, or technical section without hesitation."
+      },
+      {
+        "id": "easy_016",
+        "category": "Venues",
+        "question": "Which country is home to the famous Whistler Bike Park?",
+        "answers": ["Canada - the land of endless mountain adventures", "USA - the birthplace of extreme sports", "New Zealand - the adventure capital of the world", "Austria - the heart of alpine cycling"],
+        "correct": 0,
+        "explanation": "Whistler Bike Park is located in British Columbia, Canada, and is considered the world's premier mountain bike destination."
+      },
+      {
+        "id": "easy_017",
+        "category": "Design",
+        "question": "What characterizes 'progressive geometry' in modern mountain bikes?",
+        "answers": ["Longer reach and slacker head angles for stability", "Shorter reach and steeper angles for agility", "Equal reach and angles for balance", "Adjustable geometry for versatility"],
+        "correct": 0,
+        "explanation": "Progressive geometry features longer reach and slacker head tube angles to improve stability and handling on steep terrain."
+      },
+      {
+        "id": "easy_018",
+        "category": "Parts",
+        "question": "What component connects your legs to the bike's power system?",
+        "answers": ["The pedals - your direct connection to forward motion", "The handlebars - your steering control center", "The seat - your comfort and balance point", "The frame - your structural foundation"],
+        "correct": 0,
+        "explanation": "Pedals are where you apply power to the bike, transferring energy from your legs through the drivetrain to the wheels."
+      },
+      {
+        "id": "easy_019",
+        "category": "Trails",
+        "question": "What's the longest mountain bike trail system in the world?",
+        "answers": ["The Great Divide - 3,083 miles of adventure", "The Alpine Loop - 2,500 miles of mountains", "The Desert Circuit - 2,000 miles of sand", "The Coastal Route - 1,800 miles of oceanside"],
+        "correct": 0,
+        "explanation": "The Great Divide Mountain Bike Route is 3,083 miles long and is considered the longest off-pavement bike trail in the world."
+      },
+      {
+        "id": "easy_020",
+        "category": "Manufacturers",
+        "question": "Which brand is famous for creating the original 'Enduro' mountain bike series?",
+        "answers": ["Specialized - the innovators of modern trail riding", "Trek - the pioneers of mountain exploration", "Giant - the masters of versatile design", "Cannondale - the rebels of bike technology"],
+        "correct": 0,
+        "explanation": "Specialized is known for their popular Enduro line of mountain bikes, which helped define the enduro category."
+      },
+      {
+        "id": "easy_021",
+        "category": "Accessories",
+        "question": "What's the most important piece of safety equipment for mountain biking?",
+        "answers": ["A properly fitted helmet to protect your brain", "Knee pads for trail protection", "Gloves for better grip and control", "Eye protection from debris and sun"],
+        "correct": 0,
+        "explanation": "A helmet is the most critical safety equipment, protecting against head injuries in crashes and falls."
+      },
+      {
+        "id": "easy_022",
+        "category": "Parts",
+        "question": "What's the main function of the chainring on a mountain bike?",
+        "answers": ["It transfers power from your pedaling to the chain", "It protects the chain from getting damaged", "It keeps the chain properly tensioned", "It guides the chain around corners"],
+        "correct": 0,
+        "explanation": "The chainring is attached to the cranks and transfers the rotational power from pedaling to the chain."
+      },
+      {
+        "id": "easy_023",
+        "category": "Lore",
+        "question": "What does 'shredding' mean in mountain bike culture?",
+        "answers": ["Riding aggressively and skillfully on trails", "Tearing up your clothes on thorny bushes", "Breaking your bike components from hard use", "Cutting through dense forest vegetation"],
+        "correct": 0,
+        "explanation": "'Shredding' refers to riding with skill, style, and aggression, typically on challenging terrain."
+      },
+      {
+        "id": "easy_024",
+        "category": "Technology",
+        "question": "What does '1x' (one-by) refer to in modern mountain bike drivetrains?",
+        "answers": ["A single chainring setup for simplicity", "One gear ratio for all terrain", "One chain for the entire drivetrain", "One shifter controlling everything"],
+        "correct": 0,
+        "explanation": "1x drivetrains use a single chainring up front with a wide-range cassette in the rear, eliminating the front derailleur."
+      },
+      {
+        "id": "easy_025",
+        "category": "Venues",
+        "question": "Which desert location is considered a bucket-list mountain biking destination?",
+        "answers": ["Moab, Utah - the slickrock paradise", "Death Valley, California - the extreme desert", "Sahara, Morocco - the endless dunes", "Atacama, Chile - the driest place on Earth"],
+        "correct": 0,
+        "explanation": "Moab, Utah is famous for its slickrock trails and unique desert mountain biking experience."
+      },
+      {
+        "id": "easy_026",
+        "category": "Parts",
+        "question": "What component helps you steer the mountain bike?",
+        "answers": ["The handlebars connected to the front wheel", "The seat that shifts your weight around", "The pedals that change your body position", "The frame that determines the bike's direction"],
+        "correct": 0,
+        "explanation": "Handlebars are connected to the stem and fork, allowing you to steer the front wheel and control direction."
+      },
+      {
+        "id": "easy_027",
+        "category": "Races",
+        "question": "What type of mountain bike racing involves timed downhill sections?",
+        "answers": ["Enduro racing with multiple timed stages", "Cross-country racing with elevation changes", "Marathon racing with long distances", "Cyclocross racing with obstacles"],
+        "correct": 0,
+        "explanation": "Enduro racing features multiple timed downhill stages with untimed uphill transitions between stages."
+      },
+      {
+        "id": "easy_028",
+        "category": "History",
+        "question": "Where did the original mountain bike pioneers first start racing?",
+        "answers": ["Mount Tamalpais in Marin County, California", "Mount Washington in New Hampshire", "Mount Hood in Oregon", "Mount Rainier in Washington"],
+        "correct": 0,
+        "explanation": "The first mountain bike races took place on Mount Tamalpais in Marin County, California in the 1970s."
+      },
+      {
+        "id": "easy_029",
+        "category": "Accessories",
+        "question": "What's essential for staying hydrated during longer mountain bike rides?",
+        "answers": ["A water bottle or hydration pack system", "Sports drinks with electrolyte replacement", "Energy gels for quick nutrition", "Protein bars for sustained energy"],
+        "correct": 0,
+        "explanation": "Carrying water in bottles or hydration packs is essential for staying hydrated during mountain bike rides."
+      },
+      {
+        "id": "easy_030",
+        "category": "Design",
+        "question": "What's the benefit of having a lower bottom bracket on a mountain bike?",
+        "answers": ["It lowers the center of gravity for better stability", "It makes the bike easier to mount and dismount", "It reduces the weight of the overall frame", "It allows for larger wheels to be fitted"],
+        "correct": 0,
+        "explanation": "A lower bottom bracket reduces the bike's center of gravity, improving stability and handling, especially in corners."
       }
     ],
     "medium": [
       {
         "id": "medium_001",
-        "category": "Suspension",
-        "question": "What does 'hardtail' mean in mountain biking?",
-        "answers": ["Bike with front suspension only", "Bike with rear suspension only", "Bike with no suspension", "Bike with both front and rear suspension"],
+        "category": "Technology",
+        "question": "What's the key difference between SRAM's NX and GX Eagle drivetrains?",
+        "answers": ["NX works with standard freehubs, GX needs XD drivers", "NX has 11 gears, GX has 12 gears total", "NX uses chains, GX uses belts instead", "NX is for road, GX is for mountain"],
         "correct": 0,
-        "explanation": "A hardtail has front suspension but no rear suspension."
+        "explanation": "NX Eagle can mount on cheaper HG freehubs, while GX Eagle requires the more expensive SRAM XD driver body."
       },
       {
         "id": "medium_002",
-        "category": "Parts",
-        "question": "What is a 'derailleur' used for?",
-        "answers": ["Braking", "Steering", "Changing gears", "Suspension"],
-        "correct": 2,
-        "explanation": "The derailleur moves the chain between different gears."
+        "category": "Suspension",
+        "question": "Who patented the first air suspension system for bicycles?",
+        "answers": ["Archibald Sharp in 1901 - a true visionary", "John Dunlop in 1888 - the tire innovator", "Ignaz Schwinn in 1895 - the frame master", "Wright Brothers in 1903 - the flight pioneers"],
+        "correct": 0,
+        "explanation": "Archibald Sharp patented air suspension for bicycles as early as 1901, long before it became mainstream."
       },
       {
         "id": "medium_003",
-        "category": "Manufacturers",
-        "question": "Which brand is known for the 'Enduro' mountain bike series?",
-        "answers": ["Trek", "Specialized", "Giant", "Cannondale"],
-        "correct": 1,
-        "explanation": "Specialized makes the popular Enduro line of mountain bikes."
+        "category": "Riders",
+        "question": "How many World Championship titles did the legendary Nico Vouilloz win?",
+        "answers": ["10 titles - a record that still stands tall", "8 titles - an impressive achievement", "12 titles - the ultimate domination", "6 titles - a solid championship run"],
+        "correct": 0,
+        "explanation": "Nico Vouilloz won 10 World Championship titles during his legendary career, making him one of the most successful mountain bike racers ever."
       },
       {
         "id": "medium_004",
-        "category": "Riders",
-        "question": "Who is considered one of the greatest downhill mountain bikers of all time?",
-        "answers": ["Greg Minnaar", "Lance Armstrong", "Tony Hawk", "Usain Bolt"],
+        "category": "Technology",
+        "question": "In Shimano's MTB hierarchy, what comes between Deore and XT?",
+        "answers": ["SLX - the perfect middle ground performer", "GRX - the gravel-specific option", "105 - the road racing standard", "Ultegra - the premium choice"],
         "correct": 0,
-        "explanation": "Greg Minnaar is a multiple-time Downhill World Champion."
+        "explanation": "Shimano's mountain bike hierarchy goes Deore → SLX → XT → XTR, with SLX being the mid-range option."
       },
       {
         "id": "medium_005",
-        "category": "Races",
-        "question": "What does 'XC' stand for in mountain bike racing?",
-        "answers": ["Extreme Competition", "Cross Country", "Extra Challenging", "X-treme Course"],
-        "correct": 1,
-        "explanation": "XC stands for Cross Country, a racing discipline."
+        "category": "Events",
+        "question": "When did the first Crankworx festival take place?",
+        "answers": ["2004 in Whistler - the birth of a legend", "2000 in Moab - the desert beginning", "2008 in Rotorua - the southern start", "2010 in Chamonix - the alpine origin"],
+        "correct": 0,
+        "explanation": "Crankworx began in 2004 in Whistler, British Columbia, and has since expanded to multiple locations worldwide."
       },
       {
         "id": "medium_006",
-        "category": "Parts",
-        "question": "What is the typical wheel size for modern mountain bikes?",
-        "answers": ["26 inches", "27.5 or 29 inches", "24 inches", "32 inches"],
-        "correct": 1,
-        "explanation": "Modern mountain bikes typically use 27.5\" or 29\" wheels."
+        "category": "Venues",
+        "question": "What trail name gave birth to the term 'Repack' in mountain biking?",
+        "answers": ["A Marin County trail where riders repacked hot brake hubs", "A Colorado trail where riders repacked their gear", "A Utah trail where riders repacked their lunches", "A Vermont trail where riders repacked their bags"],
+        "correct": 0,
+        "explanation": "Repack refers to the need to repack brake hubs that overheated during early mountain bike races down steep Marin County trails."
       },
       {
         "id": "medium_007",
-        "category": "Suspension",
-        "question": "What does 'travel' refer to in mountain bike suspension?",
-        "answers": ["Distance you can ride", "How far the suspension compresses", "Speed of the bike", "Weight of the bike"],
-        "correct": 1,
-        "explanation": "Travel is the distance the suspension can compress and extend."
+        "category": "Records",
+        "question": "What's the fastest recorded speed ever achieved on a mountain bike?",
+        "answers": ["141 mph by Eric Barone on a snowy slope", "138 mph by Danny MacAskill on a mountain", "156 mph by Greg Minnaar on a track", "164 mph by Sam Hill on a glacier"],
+        "correct": 0,
+        "explanation": "Eric Barone set the record at 141 mph in 2017 on a snowy ski slope in the French Alps."
       },
       {
         "id": "medium_008",
-        "category": "Trails",
-        "question": "What is a 'singletrack' trail?",
-        "answers": ["A trail for one person only", "A narrow trail wide enough for one bike", "A straight trail", "A circular trail"],
-        "correct": 1,
-        "explanation": "Singletrack is a narrow trail that accommodates one bike at a time."
+        "category": "Technology",
+        "question": "What does 'UDH' stand for in modern mountain bike terminology?",
+        "answers": ["Universal Derailleur Hanger - SRAM's standard", "Ultra Durable Housing - for cables", "Unified Drive Hub - for wheels", "Ultimate Downhill Handlebar - for control"],
+        "correct": 0,
+        "explanation": "UDH is the Universal Derailleur Hanger standard introduced by SRAM to standardize derailleur mounting."
       },
       {
         "id": "medium_009",
         "category": "Parts",
-        "question": "What is a 'dropper post'?",
-        "answers": ["A post that drops the bike", "An adjustable height seat post", "A brake component", "A gear shifter"],
-        "correct": 1,
-        "explanation": "A dropper post allows you to adjust saddle height while riding."
+        "question": "When were V-brakes first introduced to mountain biking?",
+        "answers": ["1996 - revolutionizing mountain bike braking", "1994 - the early brake innovation", "1998 - the late 90s breakthrough", "2000 - the millennium upgrade"],
+        "correct": 0,
+        "explanation": "V-brakes debuted in 1996, providing much more powerful braking than the cantilever brakes they replaced."
       },
       {
         "id": "medium_010",
-        "category": "Accessories",
-        "question": "What is a 'tubeless' tire setup?",
-        "answers": ["Tires without inner tubes", "Tires with extra tubes", "Tires for tubes", "Lightweight tires"],
+        "category": "Manufacturers",
+        "question": "What does Transition Bikes call their unique geometry concept?",
+        "answers": ["Speed Balanced Geometry - the SBG system", "Progressive Geometry - the PG system", "Modern Geometry - the MG system", "Aggressive Geometry - the AG system"],
         "correct": 0,
-        "explanation": "Tubeless tires don't use inner tubes, sealed with sealant instead."
+        "explanation": "Transition's SBG stands for Speed Balanced Geometry, their approach to frame design."
       },
       {
         "id": "medium_011",
-        "category": "History",
-        "question": "What was the first mass-produced mountain bike called?",
-        "answers": ["Specialized Stumpjumper", "Trek 850", "Cannondale SM500", "Giant ATX"],
+        "category": "Riders",
+        "question": "Which rider dominated both downhill and enduro racing disciplines?",
+        "answers": ["Sam Hill - three DH titles plus three EWS titles", "Greg Minnaar - the South African speedster", "Aaron Gwin - the American downhill ace", "Richie Rude - the enduro specialist"],
         "correct": 0,
-        "explanation": "The Specialized Stumpjumper was the first mass-produced mountain bike."
+        "explanation": "Sam Hill won three UCI downhill world championships before switching to win three Enduro World Series titles."
       },
       {
         "id": "medium_012",
-        "category": "Events",
-        "question": "Where was Crankworx mountain bike festival first held?",
-        "answers": ["Whistler, Canada", "Moab, USA", "Chamonix, France", "Rotorua, New Zealand"],
+        "category": "History",
+        "question": "What was the original price of the first Stumpjumper in 1981?",
+        "answers": ["$750 complete or $395 frame-only", "$650 complete or $295 frame-only", "$850 complete or $495 frame-only", "$950 complete or $595 frame-only"],
         "correct": 0,
-        "explanation": "Crankworx began in Whistler, British Columbia in 2004."
+        "explanation": "The original Stumpjumper sold for $750 complete or $395 for the frame only in 1981."
       },
       {
         "id": "medium_013",
-        "category": "Manufacturers",
-        "question": "What does Transition Bikes call their geometry concept?",
-        "answers": ["Progressive Geometry", "Speed Balanced Geometry", "Modern Geometry", "Aggressive Geometry"],
-        "correct": 1,
-        "explanation": "Transition's SBG stands for Speed Balanced Geometry."
+        "category": "Venues",
+        "question": "Which destination features the 85km Old Ghost Road trail?",
+        "answers": ["New Zealand - through temperate rainforest", "Canada - across the Rocky Mountains", "Scotland - over the Highlands", "Norway - along the fjords"],
+        "correct": 0,
+        "explanation": "The Old Ghost Road is an 85km point-to-point trail in New Zealand that climbs through temperate rainforest."
       },
       {
         "id": "medium_014",
-        "category": "Lore",
-        "question": "What does 'sending it' mean in mountain biking?",
-        "answers": ["Mailing your bike", "Going for it aggressively", "Riding slowly", "Taking a break"],
-        "correct": 1,
-        "explanation": "'Sending it' means committing fully to a challenging feature or line."
+        "category": "Events",
+        "question": "When was the first UCI Mountain Bike World Championships held?",
+        "answers": ["1990 in Durango, Colorado - the championship birth", "1988 in Whistler, Canada - the alpine start", "1992 in Chamonix, France - the European beginning", "1994 in Cairns, Australia - the southern debut"],
+        "correct": 0,
+        "explanation": "The first UCI Mountain Bike World Championships took place in 1990 in Durango, Colorado."
       },
       {
         "id": "medium_015",
+        "category": "Technology",
+        "question": "What's the gear range difference between NX and GX Eagle cassettes?",
+        "answers": ["NX offers 454% range, GX offers 500% range", "NX offers 500% range, GX offers 454% range", "NX offers 400% range, GX offers 450% range", "NX offers 350% range, GX offers 400% range"],
+        "correct": 0,
+        "explanation": "NX Eagle has a 454% gear range (11-50t), while GX Eagle has a 500% gear range (10-50t)."
+      },
+      {
+        "id": "medium_016",
+        "category": "Suspension",
+        "question": "Why do experienced downhill racers often prefer coil shocks for consistent performance on rough, high-speed terrain?",
+        "answers": ["Coil springs provide more predictable rebound characteristics regardless of temperature or repeated impacts", "Coil shocks automatically adjust damping based on impact frequency", "Coil springs generate less heat during compression cycles", "Coil shocks offer infinitely adjustable spring rates mid-ride"],
+        "correct": 0,
+        "explanation": "Coil springs maintain consistent force curves and rebound behavior even under repeated high-speed impacts and temperature changes, while air shocks can vary due to heat buildup and seal friction."
+      },
+      {
+        "id": "medium_017",
         "category": "Events",
-        "question": "What year did Crankworx first start?",
-        "answers": ["2000", "2004", "2008", "2010"],
-        "correct": 1,
-        "explanation": "Crankworx began in 2004 in Whistler, BC."
+        "question": "When was the UCI Downhill World Cup first established?",
+        "answers": ["1991 - the beginning of elite downhill racing", "1989 - the early competitive years", "1993 - the mid-90s expansion", "1995 - the sport's golden era"],
+        "correct": 0,
+        "explanation": "The UCI Downhill World Cup was inaugurated in 1991, establishing the premier downhill racing series."
+      },
+      {
+        "id": "medium_018",
+        "category": "Venues",
+        "question": "Which European destination is known as the 'Adventure Capital' for mountain biking?",
+        "answers": ["Morzine, France - in the heart of the Alps", "Innsbruck, Austria - the Tyrolean paradise", "Verbier, Switzerland - the alpine playground", "Livigno, Italy - the high-altitude haven"],
+        "correct": 0,
+        "explanation": "Morzine sits in the French Alps and regularly hosts UCI World Cup races, making it a premier European MTB destination."
+      },
+      {
+        "id": "medium_019",
+        "category": "Riders",
+        "question": "Who holds the record for most Downhill World Championship wins?",
+        "answers": ["Greg Minnaar - the South African legend", "Aaron Gwin - the American speedster", "Steve Peat - the British bulldozer", "Fabien Barel - the French flyer"],
+        "correct": 0,
+        "explanation": "Greg Minnaar holds the record for most Downhill World Championship wins among male riders."
+      },
+      {
+        "id": "medium_020",
+        "category": "Technology",
+        "question": "What's the weight difference between Shimano XT and NX Eagle drivetrains?",
+        "answers": ["XT is 200-250 grams lighter than NX Eagle", "XT is 150-200 grams lighter than NX Eagle", "XT is 300-350 grams lighter than NX Eagle", "XT is 100-150 grams lighter than NX Eagle"],
+        "correct": 0,
+        "explanation": "Deore XT and GX Eagle are 200-250 grams lighter than entry-level drivetrains like NX Eagle."
+      },
+      {
+        "id": "medium_021",
+        "category": "Parts",
+        "question": "What's the typical range of suspension travel for trail bikes?",
+        "answers": ["120-150mm travel for balanced performance", "80-100mm travel for efficient climbing", "160-180mm travel for aggressive descending", "200-250mm travel for extreme terrain"],
+        "correct": 0,
+        "explanation": "Trail bikes typically have 120-150mm of suspension travel, balancing climbing efficiency with descending capability."
+      },
+      {
+        "id": "medium_022",
+        "category": "Lore",
+        "question": "What does 'hucking' mean in mountain bike terminology?",
+        "answers": ["Launching off jumps or drops with commitment", "Carrying your bike up steep climbs", "Riding through muddy or wet conditions", "Taking apart your bike for maintenance"],
+        "correct": 0,
+        "explanation": "'Hucking' refers to launching off jumps, drops, or other features, often with style and commitment."
+      },
+      {
+        "id": "medium_023",
+        "category": "Design",
+        "question": "What's the purpose of a chainstay protector on mountain bikes?",
+        "answers": ["Preventing chain slap noise and frame damage", "Improving aerodynamics for faster riding", "Adding structural strength to the frame", "Mounting additional accessories like lights"],
+        "correct": 0,
+        "explanation": "Chainstay protectors prevent the chain from hitting and damaging the frame while reducing noise from chain slap."
+      },
+      {
+        "id": "medium_024",
+        "category": "Trails",
+        "question": "What type of trail surface is Moab, Utah famous for?",
+        "answers": ["Slickrock - unique sandstone formations", "Loam - soft, organic soil composition", "Hardpack - compressed dirt and gravel", "Technical rock gardens - loose boulder fields"],
+        "correct": 0,
+        "explanation": "Moab is famous for its slickrock trails, which feature unique sandstone formations that provide excellent traction."
+      },
+      {
+        "id": "medium_025",
+        "category": "Manufacturers",
+        "question": "Which company was founded in 1971 and is known for innovative aluminum frames?",
+        "answers": ["Cannondale - the aluminum pioneers", "Specialized - the composite experts", "Trek - the carbon fiber innovators", "Santa Cruz - the suspension specialists"],
+        "correct": 0,
+        "explanation": "Cannondale was founded in 1971 and became famous for their innovative aluminum frame designs and manufacturing techniques."
+      },
+      {
+        "id": "medium_026",
+        "category": "Accessories",
+        "question": "What's the main benefit of clipless pedals for mountain biking?",
+        "answers": ["Improved power transfer and bike control", "Complete foot protection from impacts", "Automatic adjustment to different shoes", "Built-in shock absorption for comfort"],
+        "correct": 0,
+        "explanation": "Clipless pedals provide better power transfer and allow riders to pull up on the pedals, improving control and efficiency."
+      },
+      {
+        "id": "medium_027",
+        "category": "Events",
+        "question": "What's unique about the Enduro World Series racing format?",
+        "answers": ["Only downhill sections are timed competitively", "Riders race the same course multiple times", "Teams compete in relay-style formats", "All sections including climbs are timed"],
+        "correct": 0,
+        "explanation": "In enduro racing, only the downhill stages are timed, while uphill transfers are untimed liaisons."
+      },
+      {
+        "id": "medium_028",
+        "category": "Technology",
+        "question": "What's the main advantage of the Boost hub standard?",
+        "answers": ["Wider hub spacing for stiffer wheel builds", "Faster engagement for quicker acceleration", "Lighter weight for improved climbing", "Better sealing against dirt and moisture"],
+        "correct": 0,
+        "explanation": "Boost hubs use wider spacing (148mm rear, 110mm front) to create stiffer wheel builds and allow for wider tire clearance."
+      },
+      {
+        "id": "medium_029",
+        "category": "Venues",
+        "question": "Which Southern Hemisphere location is famous for its mountain bike tourism?",
+        "answers": ["Queenstown, New Zealand - the adventure capital", "Cape Town, South Africa - the table mountain trails", "Melbourne, Australia - the urban trail network", "Santiago, Chile - the Andes foothills"],
+        "correct": 0,
+        "explanation": "Queenstown, New Zealand is often called the 'Adventure Capital of the World' and offers world-class mountain biking."
+      },
+      {
+        "id": "medium_030",
+        "category": "Technology",
+        "question": "Why do most trail and XC riders choose air shocks over coil shocks for their bikes?",
+        "answers": ["Air pressure can be easily adjusted to change spring rate plus significant weight savings", "Air shocks provide better grip on technical climbs", "Air shocks last longer between service intervals", "Air shocks work better in cold weather conditions"],
+        "correct": 0,
+        "explanation": "Air shocks can be precisely tuned with just a pump to adjust spring rate for different rider weights or terrain, and typically save 200-400 grams over coil shocks."
       }
     ],
     "hard": [
       {
         "id": "hard_001",
-        "category": "Suspension",
-        "question": "What is the difference between air and coil suspension?",
-        "answers": ["Air is lighter, coil is more consistent", "Coil is lighter, air is heavier", "No difference", "Air is only for rear, coil for front"],
+        "category": "Technology",
+        "question": "What is Specialized's GENIE shock technology specifically designed to do?",
+        "answers": ["Dual air chambers with Progressive Spring Assistant", "Electronic damping with wireless connectivity", "Coil-over design with magnetic adjustment", "Hydraulic lockout with remote activation"],
         "correct": 0,
-        "explanation": "Air shocks are lighter and adjustable, while coil shocks provide more consistent performance."
+        "explanation": "GENIE features dual air chambers with a Progressive Spring Assistant (PSA) for improved small-bump sensitivity."
       },
       {
         "id": "hard_002",
-        "category": "Riders",
-        "question": "Which rider has won the most Downhill World Championships?",
-        "answers": ["Aaron Gwin", "Greg Minnaar", "Steve Peat", "Fabien Barel"],
-        "correct": 1,
-        "explanation": "Greg Minnaar holds the record for most Downhill World Championship wins."
+        "category": "Records",
+        "question": "What's the longest dirt-to-dirt jump record on a mountain bike?",
+        "answers": ["43 meters by Fabiolous Escape in Austria", "36.49 meters by Cam Zink in Nevada", "45 meters by Brandon Semenuk in Utah", "40 meters by Kurt Sorge in Canada"],
+        "correct": 0,
+        "explanation": "Fabiolous Escape made a 43-meter jump in Saalbach, Austria in 2018, breaking Cam Zink's previous record of 36.49 meters."
       },
       {
         "id": "hard_003",
-        "category": "Design",
-        "question": "What is 'progressive geometry' in mountain bike design?",
-        "answers": ["Longer reach, slacker angles", "Shorter reach, steeper angles", "Equal reach and angles", "Adjustable geometry"],
+        "category": "Events",
+        "question": "What's the prize money for winning Crankworx's Triple Crown of Slopestyle?",
+        "answers": ["$25,000 CAD for the ultimate slopestyle achievement", "$20,000 CAD for the three-event sweep", "$30,000 CAD for the championship bonus", "$15,000 CAD for the series victory"],
         "correct": 0,
-        "explanation": "Progressive geometry features longer reach and slacker head tube angles for stability."
+        "explanation": "The Triple Crown of Slopestyle, requiring wins at all three Crankworx slopestyle events in one season, is worth $25,000 CAD."
       },
       {
         "id": "hard_004",
-        "category": "History",
-        "question": "Who designed the first Specialized Stumpjumper frame?",
-        "answers": ["Mike Sinyard", "Tim Neenan", "Gary Fisher", "Tom Ritchey"],
-        "correct": 1,
-        "explanation": "Tim Neenan designed the original Stumpjumper frame for Specialized."
+        "category": "Suspension",
+        "question": "Who designed the first suspension system with a single pivot in 1983?",
+        "answers": ["Brian Skinner with the MCR Descender design", "Gary Fisher with the Genesis prototype", "Tom Ritchey with the Breakaway system", "Keith Bontrager with the Race Link"],
+        "correct": 0,
+        "explanation": "In 1983, Brian Skinner designed and implemented the first suspension system with a simple rear shock and single pivot called the MCR Descender."
       },
       {
         "id": "hard_005",
-        "category": "Records",
-        "question": "What is the fastest recorded speed on a mountain bike?",
-        "answers": ["138 mph", "141 mph", "156 mph", "164 mph"],
-        "correct": 1,
-        "explanation": "Eric Barone set the record at 141 mph in 2017 on a snowy ski slope."
+        "category": "Venues",
+        "question": "What's the total elevation gain on the Great Divide Mountain Bike Route?",
+        "answers": ["200,000 feet through mountains and deserts", "150,000 feet across varied terrain", "250,000 feet of extreme climbing", "180,000 feet of challenging ascents"],
+        "correct": 0,
+        "explanation": "The Great Divide route has an elevation gain of 200,000 feet and comprises snowy mountains and deserts over 3,083 miles."
       },
       {
         "id": "hard_006",
-        "category": "Venues",
-        "question": "What famous trail gave its name to 'Repack' racing?",
-        "answers": ["Marin County trail where riders had to repack hot brake hubs", "A trail in Colorado", "Whistler's main trail", "A trail in Utah"],
+        "category": "Riders",
+        "question": "Which female rider won both cross-country and downhill World Championships?",
+        "answers": ["Juli Furtado - XC in 1990, DH in 1992", "Missy Giove - DH in 1994, XC in 1996", "Anne-Caroline Chausson - XC in 1998, DH in 2000", "Paola Pezzo - XC in 1993, DH in 1995"],
         "correct": 0,
-        "explanation": "Repack refers to repacking brake hubs that overheated on the descent."
+        "explanation": "Juli Furtado won the cross-country World Championship in 1990 and the downhill World Championship in 1992."
       },
       {
         "id": "hard_007",
-        "category": "Events",
-        "question": "What is the 'Triple Crown of Slopestyle' at Crankworx?",
-        "answers": ["Winning 3 events in a season", "Winning 3 years in a row", "3 different trick categories", "3 different locations"],
+        "category": "History",
+        "question": "Who were the first people historically documented to use mountain bikes?",
+        "answers": ["Buffalo Soldiers in the 18th century", "Gold Rush miners in the 19th century", "Railroad workers in the early 1900s", "Forest Rangers in the 1920s"],
         "correct": 0,
-        "explanation": "The Triple Crown requires winning all three Crankworx slopestyle events in one season."
+        "explanation": "The Buffalo Soldiers were reportedly the first people to use mountain bikes, though these early versions lacked modern features like suspension and gearing."
       },
       {
         "id": "hard_008",
-        "category": "Parts",
-        "question": "What year were V-brakes introduced to mountain biking?",
-        "answers": ["1994", "1996", "1998", "2000"],
-        "correct": 1,
-        "explanation": "V-brakes debuted in 1996, revolutionizing mountain bike braking."
+        "category": "Events",
+        "question": "Who were the top racers when mountain bike racing began in October 1976?",
+        "answers": ["Joe Breeze and Gary Fisher in those early Repack races", "Tom Ritchey and Charlie Kelly on Mount Tam", "Keith Bontrager and Wende Cragg in Marin", "Chris Chance and Steve Potts in California"],
+        "correct": 0,
+        "explanation": "When mountain bike racing began in October 1976 with the first Repack downhill races, Joe Breeze and Gary Fisher were the top racers."
       },
       {
         "id": "hard_009",
-        "category": "Riders",
-        "question": "How many World Championship titles did Nico Vouilloz win?",
-        "answers": ["8", "10", "12", "15"],
-        "correct": 1,
-        "explanation": "Nico Vouilloz won 10 World Championship titles during his career."
+        "category": "Technology",
+        "question": "What's the key technical difference between SRAM's X01 and GX Eagle shifters?",
+        "answers": ["X01 has significantly improved shifter feel and precision", "X01 uses carbon fiber while GX uses aluminum", "X01 has wireless connectivity while GX is mechanical", "X01 has 13 speeds while GX has 12 speeds"],
+        "correct": 0,
+        "explanation": "The shifter is where you see huge performance gains from X01 over GX, with much improved feel and precision."
       },
       {
         "id": "hard_010",
-        "category": "Technology",
-        "question": "What is Specialized's GENIE shock technology?",
-        "answers": ["Electronic damping", "Dual air chambers with PSA spring", "Coil-over design", "Magnetic damping"],
-        "correct": 1,
-        "explanation": "GENIE features dual air chambers with a Progressive Spring Assistant (PSA)."
+        "category": "Manufacturers",
+        "question": "What percentage of Hodaka does Giant own, and why is this significant?",
+        "answers": ["30% - Hodaka is a key Taiwanese supplier for many brands", "25% - Hodaka manufactures carbon fiber frames", "40% - Hodaka produces suspension components", "35% - Hodaka makes drivetrain parts"],
+        "correct": 0,
+        "explanation": "Giant owns 30% of Hodaka, which is a key Taiwanese supplier for many bike brands including Bianchi."
       },
       {
         "id": "hard_011",
-        "category": "Venues",
-        "question": "When was the first UCI Mountain Bike World Championships held?",
-        "answers": ["1988", "1990", "1992", "1994"],
-        "correct": 1,
-        "explanation": "The first UCI Mountain Bike World Championships took place in 1990 in Durango, Colorado."
+        "category": "Events",
+        "question": "Who has won Red Bull Rampage the most times?",
+        "answers": ["Kurt Sorge and Brandon Semenuk - both with 3 wins", "Cam Zink and Darren Berrecloth - both with 2 wins", "Ramon Hunziker and Kyle Strait - both with 3 wins", "Andreu Lacondeguy and Tom van Steenbergen - both with 2 wins"],
+        "correct": 0,
+        "explanation": "Canadians Kurt Sorge and Brandon Semenuk have each won Red Bull Rampage three times, with Sorge having a slight edge in overall podium finishes."
       },
       {
         "id": "hard_012",
-        "category": "History",
-        "question": "What was the original price of the first Stumpjumper in 1981?",
-        "answers": ["$650", "$750", "$850", "$950"],
-        "correct": 1,
-        "explanation": "The original Stumpjumper sold for $750 complete or $395 for frame only."
+        "category": "Technology",
+        "question": "What's the main technical advantage of SRAM's Transmission drivetrain?",
+        "answers": ["Direct-mount rear derailleur with UDH standard", "Wireless shifting with electronic precision", "Coil-spring derailleur with magnetic damping", "Hydraulic actuation with carbon construction"],
+        "correct": 0,
+        "explanation": "SRAM Transmission features a direct-mount rear derailleur designed for frames with the UDH standard, offering precise shifts without adjustment screws."
       },
       {
         "id": "hard_013",
-        "category": "Events",
-        "question": "When was the UCI Downhill World Cup first held?",
-        "answers": ["1989", "1991", "1993", "1995"],
-        "correct": 1,
-        "explanation": "The UCI Downhill World Cup was inaugurated in 1991."
+        "category": "Venues",
+        "question": "What makes Austria's Bike Trail Tirol particularly noteworthy?",
+        "answers": ["It's 1,000km long - the longest MTB trail in the Alps", "It's 850km long - the highest MTB trail in Europe", "It's 1,200km long - the most technical trail system", "It's 750km long - the most scenic alpine route"],
+        "correct": 0,
+        "explanation": "The Bike Trail Tirol is 1,000km long and is said to be the longest mountain bike trail in the Alps, circumnavigating the entire Tyrol region."
       },
       {
         "id": "hard_014",
-        "category": "Technology",
-        "question": "What does 'UDH' stand for in modern mountain bike design?",
-        "answers": ["Universal Derailleur Hanger", "Ultra Durable Housing", "Unified Drive Hub", "Universal Disc Housing"],
+        "category": "Riders",
+        "question": "How many World Cup XCO titles did Nino Schurter win in his career?",
+        "answers": ["Nine Elite Men's XCO World Cup series titles", "Seven Elite Men's XCO World Cup series titles", "Eleven Elite Men's XCO World Cup series titles", "Five Elite Men's XCO World Cup series titles"],
         "correct": 0,
-        "explanation": "UDH is the Universal Derailleur Hanger standard introduced by SRAM."
+        "explanation": "Nino Schurter won nine Elite Men's XCO World Cup series titles along with ten Elite Men's XCO World Championships."
       },
       {
         "id": "hard_015",
+        "category": "History",
+        "question": "When was Giant Manufacturing actually founded and what's notable about their timing?",
+        "answers": ["1981 - the same year as the first Stumpjumper", "1979 - two years before mass production began", "1983 - during the mountain bike boom", "1985 - when the sport went mainstream"],
+        "correct": 0,
+        "explanation": "Giant's in-house bike brand started in 1981, the same year Specialized released the first mass-produced mountain bike, the Stumpjumper."
+      },
+      {
+        "id": "hard_016",
+        "category": "Technology",
+        "question": "What's the estimated time difference between air and coil shocks in performance testing?",
+        "answers": ["Coil was only 0.4% slower than air shocks", "Air was 0.8% faster than coil shocks", "Coil was 1.2% slower than air shocks", "Air was 0.6% faster than coil shocks"],
+        "correct": 0,
+        "explanation": "Testing showed minimal difference: air shock averaged 1:10.10 and coil averaged 1:10.41, with coil being only 0.4% slower."
+      },
+      {
+        "id": "hard_017",
+        "category": "Suspension",
+        "question": "What's the key technical challenge with pressure balancing in modern air shocks?",
+        "answers": ["Maintaining low positive pressure for faster damper response", "Equalizing negative and positive air chambers", "Preventing air from mixing with damping oil", "Controlling temperature-related pressure changes"],
+        "correct": 0,
+        "explanation": "Pressure balancing maintains low positive pressure in the damper, allowing much faster damper response time to rider inputs."
+      },
+      {
+        "id": "hard_018",
         "category": "Events",
-        "question": "What is the prize money for winning the Crankworx Triple Crown of Slopestyle?",
-        "answers": ["$15,000 CAD", "$20,000 CAD", "$25,000 CAD", "$30,000 CAD"],
-        "correct": 2,
-        "explanation": "The Triple Crown of Slopestyle is worth $25,000 CAD."
+        "question": "What's special about Christopher Blevins' 2024 XC World Series performance?",
+        "answers": ["He achieved his first perfect weekend with short-track and XC wins", "He won five consecutive World Cup races", "He set a new course record at every venue", "He dominated both elite and U23 categories"],
+        "correct": 0,
+        "explanation": "Christopher Blevins achieved his first perfect XC World Series weekend by winning both the short-track and XC races."
+      },
+      {
+        "id": "hard_019",
+        "category": "Design",
+        "question": "What's the significance of 740mm and 760mm handlebars in modern XC bikes?",
+        "answers": ["These wide bars were unthinkable in XC a decade ago", "They're the new UCI regulation maximum widths", "They're designed specifically for electronic shifting", "They're the optimal width for aerodynamic efficiency"],
+        "correct": 0,
+        "explanation": "Many XC bikes now come with 740mm or 760mm handlebars, which would have been unthinkable in cross-country racing just a decade ago."
+      },
+      {
+        "id": "hard_020",
+        "category": "Venues",
+        "question": "What's the estimated completion time for experienced riders on the Great Divide route?",
+        "answers": ["About ten weeks for the full 3,083-mile journey", "About eight weeks for the complete traverse", "About twelve weeks for the entire route", "About six weeks for the full distance"],
+        "correct": 0,
+        "explanation": "The Great Divide route is estimated to take experienced riders about ten weeks to complete the full 3,083-mile journey."
+      },
+      {
+        "id": "hard_021",
+        "category": "Technology",
+        "question": "What's the main technical innovation behind Fox's Live Valve suspension system?",
+        "answers": ["Electronic damping adjustment based on terrain sensors", "Mechanical lockout with cable actuation", "Air pressure adjustment via smartphone app", "Magnetic damping with zero mechanical parts"],
+        "correct": 0,
+        "explanation": "Fox Live Valve uses electronic sensors to automatically adjust damping based on terrain and riding conditions in real-time."
+      },
+      {
+        "id": "hard_022",
+        "category": "Parts",
+        "question": "What's the technical difference between centerlock and 6-bolt disc brake mounting systems?",
+        "answers": ["Centerlock uses a single threaded ring, 6-bolt uses six individual bolts", "Centerlock is for road bikes, 6-bolt is for mountain bikes", "Centerlock is heavier but stronger, 6-bolt is lighter", "Centerlock uses hydraulic mounting, 6-bolt uses mechanical"],
+        "correct": 0,
+        "explanation": "Centerlock rotors mount with a single threaded lockring, while 6-bolt rotors use six individual bolts around the perimeter."
+      },
+      {
+        "id": "hard_023",
+        "category": "Riders",
+        "question": "How many UCI Downhill World Championship titles did Nico Vouilloz win during his career?",
+        "answers": ["Seven World Championship titles - a legendary record", "Five World Championship titles - an impressive run", "Nine World Championship titles - the ultimate domination", "Three World Championship titles - a solid achievement"],
+        "correct": 0,
+        "explanation": "Nico Vouilloz holds the record of seven World Championship titles in Elite Men's Downhill, along with five World Cup Series titles."
+      },
+      {
+        "id": "hard_024",
+        "category": "Technology",
+        "question": "What's the key advantage of SRAM's Eagle drivetrain ecosystem compatibility?",
+        "answers": ["All Eagle levels can interact and be mixed together", "Only same-level components work with each other", "Electronic and mechanical versions are incompatible", "Different levels use different chain standards"],
+        "correct": 0,
+        "explanation": "SRAM Eagle is an entire drivetrain ecosystem where all levels (SX, NX, GX, X01, XX1) can interact with each other."
+      },
+      {
+        "id": "hard_025",
+        "category": "History",
+        "question": "What was groundbreaking about Cannondale's approach to bicycle manufacturing in the 1970s?",
+        "answers": ["They pioneered oversized aluminum tube welding techniques", "They created the first carbon fiber mountain bike frames", "They invented the first suspension fork design", "They developed the first 12-speed drivetrain system"],
+        "correct": 0,
+        "explanation": "Cannondale revolutionized bike manufacturing by pioneering the use of oversized aluminum tubes and advanced welding techniques."
+      },
+      {
+        "id": "hard_026",
+        "category": "Events",
+        "question": "What distinguishes the Cape Epic from other mountain bike stage races?",
+        "answers": ["It's an 8-day stage race requiring mandatory 2-person teams", "It's a solo ultra-endurance race across multiple countries", "It's the only race that includes both XC and DH stages", "It's the longest single-stage mountain bike race"],
+        "correct": 0,
+        "explanation": "The Cape Epic is an 8-day stage race in South Africa where riders must compete in mandatory 2-person teams throughout the entire event."
+      },
+      {
+        "id": "hard_027",
+        "category": "Design",
+        "question": "What's the technical benefit of the 'boost' rear hub spacing standard (148mm vs 142mm)?",
+        "answers": ["Shorter rear triangle with wider tire clearance and stiffer wheels", "Longer rear triangle with better suspension kinematics", "Standardized derailleur hanger positioning", "Improved chain line for 1x drivetrains"],
+        "correct": 0,
+        "explanation": "Boost 148mm rear spacing allows for shorter chainstays while providing wider tire clearance and building stiffer wheels."
+      },
+      {
+        "id": "hard_028",
+        "category": "Venues",
+        "question": "What makes the Whistler Mountain Bike Park's trail design philosophy unique?",
+        "answers": ["They invented the purpose-built flow trail technique", "They focus exclusively on natural terrain features", "They build only expert-level technical trails", "They use machine-built jumps with natural landings"],
+        "correct": 0,
+        "explanation": "Whistler essentially invented the purpose-built flow trail—a trail building technique that has since spread around the world."
+      },
+      {
+        "id": "hard_029",
+        "category": "Technology",
+        "question": "What's the main technical challenge with e-MTB software that affects range?",
+        "answers": ["Power delivery algorithms and final battery percentage management", "Battery cell degradation over charge cycles", "Motor efficiency at different cadences", "Weight distribution affecting handling"],
+        "correct": 0,
+        "explanation": "eMTB software controls power delivery and how the system manages the final battery percentage, significantly affecting range."
+      },
+      {
+        "id": "hard_030",
+        "category": "Parts",
+        "question": "What's the key technical advantage of T47 bottom bracket standard over BSA threading?",
+        "answers": ["T47's 47mm shell allows 6mm wall thickness vs BSA's 2.5mm for 30mm spindles", "T47 uses Italian threading while BSA uses English threading", "T47 requires special torque specifications that BSA doesn't need", "T47 bottom brackets weigh significantly less than BSA equivalents"],
+        "correct": 0,
+        "explanation": "T47's larger 47mm diameter threading allows 6mm wall thickness around 30mm spindles, while BSA's 34.8mm threading only allows 2.5mm, making T47 much stiffer for modern wide spindle cranks."
+      },
+      {
+        "id": "hard_031",
+        "category": "Parts",
+        "question": "Why does the Italian bottom bracket standard use right-hand threads on both sides while BSA uses opposite threading?",
+        "answers": ["Italian design creates precession issues that require periodic retightening", "Italian threading prevents cross-threading during installation", "Italian standard was designed for lighter weight applications", "Italian threading allows for easier bearing replacement"],
+        "correct": 0,
+        "explanation": "Italian BB's drive side right-hand thread can loosen due to precession from crank rotation, requiring periodic checking, while BSA's left-hand drive side thread actually tightens during pedaling."
+      },
+      {
+        "id": "hard_033",
+        "category": "Parts",
+        "question": "What spindle diameter does Shimano's Hollowtech II system use compared to SRAM's DUB?",
+        "answers": ["Hollowtech II uses 24mm while DUB uses 28.99mm spindles", "Both systems use identical 30mm spindle diameters", "Hollowtech II uses 30mm while DUB uses 24mm spindles", "Hollowtech II uses 28.99mm while DUB uses 30mm spindles"],
+        "correct": 0,
+        "explanation": "Shimano's Hollowtech II system uses a 24mm spindle diameter, while SRAM's DUB system uses a larger 28.99mm spindle for increased stiffness."
+      },
+      {
+        "id": "hard_034",
+        "category": "Suspension",
+        "question": "What's the key difference between RockShox's 2025 Charger 3.1 damper across Pike, Lyrik, and ZEB forks?",
+        "answers": ["All three forks share the same Charger 3.1 damper technology with different chassis stiffness", "Pike uses Charger 3.0, Lyrik uses 3.1, and ZEB uses 3.2 dampers", "Each fork uses completely different damper designs optimized for travel", "Pike and Lyrik share dampers while ZEB uses a gravity-specific version"],
+        "correct": 0,
+        "explanation": "For 2025, RockShox simplified their lineup by using the same Charger 3.1 damper across Pike (35mm), Lyrik (35mm), and ZEB (38mm), differentiating only by chassis stiffness and travel range."
+      },
+      {
+        "id": "hard_035", 
+        "category": "Suspension",
+        "question": "Why do Fox Factory forks feature Kashima coating while Performance Elite forks use black anodizing?",
+        "answers": ["Kashima coating reduces friction and provides corrosion resistance beyond anodizing", "Kashima is purely cosmetic while black anodizing provides better protection", "Kashima coating allows for tighter manufacturing tolerances", "Kashima is required for the GRIP2 damper to function properly"],
+        "correct": 0,
+        "explanation": "Fox's gold Kashima coating reduces friction between seals and stanchions while providing superior corrosion resistance compared to standard black anodizing, justifying the Factory series premium."
+      },
+      {
+        "id": "hard_036",
+        "category": "Suspension", 
+        "question": "What unique feature distinguishes DVO's OTT (Off The Top) technology from standard air spring designs?",
+        "answers": ["Adjustable negative spring preload using an actual coil spring for initial travel", "Electronic damping that automatically adjusts based on terrain", "Hydraulic bottom-out protection that engages progressively", "Magnetic damping system that replaces traditional oil circuits"],
+        "correct": 0,
+        "explanation": "DVO's OTT uses an adjustable coil spring for negative spring preload, allowing super plush initial travel regardless of air spring pressure - unlike Fox/RockShox systems that rely only on air chambers."
+      },
+      {
+        "id": "hard_037",
+        "category": "Suspension",
+        "question": "Why are 38mm stanchion forks like the Fox 38 and RockShox ZEB preferred for enduro racing over 36mm options?",
+        "answers": ["38mm stanchions provide significantly better lateral stiffness for aggressive cornering and big hits", "38mm forks have longer travel ranges that 36mm forks cannot achieve", "38mm stanchions allow for larger air chambers and more progressive spring curves", "38mm forks use different damper technology unavailable in smaller diameters"],
+        "correct": 0,
+        "explanation": "The larger 38mm stanchion diameter provides much greater lateral stiffness and resistance to flex during aggressive riding, cornering, and big impacts compared to 36mm forks, crucial for enduro racing performance."
+      },
+      {
+        "id": "hard_038",
+        "category": "Suspension",
+        "question": "What's the primary difference between high-speed and low-speed compression damping adjustments?",
+        "answers": ["High-speed controls sudden impacts, low-speed controls gradual compression from rider weight", "High-speed is for racing, low-speed is for trail riding", "High-speed uses oil, low-speed uses air pressure", "High-speed is electronic, low-speed is mechanical"],
+        "correct": 0,
+        "explanation": "High-speed compression damping controls sudden impacts like rocks and roots, while low-speed compression controls gradual compression from rider weight and pedaling forces."
+      },
+      {
+        "id": "hard_039",
+        "category": "Technology",
+        "question": "What does 'HSC' and 'LSC' stand for on modern suspension adjustments?",
+        "answers": ["High-Speed Compression and Low-Speed Compression", "Heavy-Shock Control and Light-Shock Control", "Hard-Surface Control and Light-Surface Control", "High-Spring Compression and Low-Spring Compression"],
+        "correct": 0,
+        "explanation": "HSC (High-Speed Compression) and LSC (Low-Speed Compression) are damping adjustments that control how the suspension reacts to different types of forces."
+      },
+      {
+        "id": "hard_040",
+        "category": "Suspension",
+        "question": "What's the purpose of a 'lockout' feature on suspension forks?",
+        "answers": ["To prevent suspension movement during climbing and sprinting on smooth surfaces", "To lock the bike in place when parked", "To prevent theft of the suspension components", "To lock the fork at maximum extension"],
+        "correct": 0,
+        "explanation": "Lockout prevents suspension movement to improve pedaling efficiency during climbing and sprinting on smooth surfaces where suspension movement wastes energy."
+      },
+      {
+        "id": "hard_041",
+        "category": "Parts",
+        "question": "What's the difference between Boost and Super Boost hub spacing standards?",
+        "answers": ["Boost is 148mm rear/110mm front, Super Boost is 157mm rear/110mm front", "Boost is 142mm rear/100mm front, Super Boost is 148mm rear/110mm front", "Boost is 135mm rear/100mm front, Super Boost is 142mm rear/100mm front", "Boost is 157mm rear/110mm front, Super Boost is 165mm rear/120mm front"],
+        "correct": 0,
+        "explanation": "Boost spacing is 148mm rear and 110mm front, while Super Boost (or Boost Plus) is 157mm rear and 110mm front for increased stiffness and tire clearance."
+      },
+      {
+        "id": "hard_042",
+        "category": "Technology",
+        "question": "What's the main advantage of a 'mullet' bike setup in modern mountain biking?",
+        "answers": ["29-inch front wheel for rollover capability, 27.5-inch rear for agility", "Different tire compounds front and rear for varied grip", "Mixed drivetrain components for versatility", "Alternating suspension settings for varied terrain"],
+        "correct": 0,
+        "explanation": "A mullet setup uses a 29-inch front wheel for better rollover capability and a 27.5-inch rear wheel for improved agility and maneuverability."
+      }
+    ],
+    "removed": [
+      {
+        "id": "hard_032",
+        "category": "Parts", 
+        "question": "What shell diameter and threading specification defines the T47 bottom bracket standard?",
+        "answers": ["47mm diameter with M47 x 1.0mm pitch threading", "47mm diameter with 1.37\" x 24 TPI threading", "46mm diameter with M46 x 1.5mm pitch threading", "47mm diameter with 36mm x 24 TPI threading"],
+        "correct": 0,
+        "explanation": "BB86 shells have a 41mm internal diameter, but DUB's standard 6806 bearings are 42mm externally, creating a fitment issue that requires special solutions or bearing modifications.",
+        "removal_reason": "Pure technical specifications without engaging format"
       }
     ]
   },
   "metadata": {
-    "total_questions": 45,
+    "total_questions": 101,
     "questions_by_difficulty": {
-      "easy": 15,
-      "medium": 15, 
-      "hard": 15
+      "easy": 30,
+      "medium": 30, 
+      "hard": 41
     },
     "questions_by_category": {
-      "Parts": 8,
-      "Manufacturers": 4,
-      "Accessories": 3,
-      "Trails": 2,
-      "History": 5,
-      "Venues": 4,
-      "Events": 6,
-      "Suspension": 4,
-      "Riders": 3,
-      "Races": 2,
-      "Lore": 2,
-      "Design": 1,
-      "Technology": 3,
-      "Records": 2
+      "Parts": 13,
+      "Manufacturers": 9,
+      "Accessories": 4,
+      "Trails": 6,
+      "History": 7,
+      "Venues": 11,
+      "Events": 11,
+      "Suspension": 15,
+      "Riders": 8,
+      "Races": 4,
+      "Lore": 4,
+      "Design": 6,
+      "Technology": 17,
+      "Records": 4
     }
   }
 }
