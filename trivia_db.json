@@ -587,9 +587,9 @@
         "id": "hard_011",
         "category": "Events",
         "question": "Who has won Red Bull Rampage the most times?",
-        "answers": ["Kurt Sorge and Brandon Semenuk - both with 3 wins", "Cam Zink and Darren Berrecloth - both with 2 wins", "Ramon Hunziker and Kyle Strait - both with 3 wins", "Andreu Lacondeguy and Tom van Steenbergen - both with 2 wins"],
+        "answers": ["Brandon Semenuk with 5 wins - the undisputed Rampage king", "Kurt Sorge with 3 wins - the Canadian champion", "Cam Zink with 2 wins - the American pioneer", "Kyle Strait with 1 win - the Utah native"],
         "correct": 0,
-        "explanation": "Canadians Kurt Sorge and Brandon Semenuk have each won Red Bull Rampage three times, with Sorge having a slight edge in overall podium finishes."
+        "explanation": "Brandon Semenuk holds the record with 5 Red Bull Rampage wins (2008, 2016, 2019, 2021, 2024), making him the most successful competitor in the event's history."
       },
       {
         "id": "hard_012",
