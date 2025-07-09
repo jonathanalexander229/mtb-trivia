@@ -416,7 +416,6 @@
             </button>
             <div class="share-feedback" id="shareFeedback"></div>
             <button class="restart-btn" onclick="restartGame()">Play Again</button>
-            <button class="restart-btn" onclick="showDifficultySelector()">Change Difficulty</button>
         </div>
     </div>
 
@@ -686,7 +685,8 @@
             
             // No need to limit questions since we're going until X wrong answers
             
-            // Show question section
+            // Hide difficulty selector and show question section
+            document.getElementById('difficultySelector').style.display = 'none';
             document.getElementById('questionSection').classList.add('active');
             document.getElementById('gameOver').classList.remove('show');
             
@@ -834,18 +834,16 @@
         }
 
         function restartGame() {
-            if (currentDifficulty) {
-                selectDifficulty(currentDifficulty);
-            } else {
-                showDifficultySelector();
-                document.getElementById('questionSection').classList.remove('active');
-                document.getElementById('gameOver').classList.remove('show');
-            }
+            // Always go back to difficulty selection
+            showDifficultySelector();
+            document.getElementById('questionSection').classList.remove('active');
+            document.getElementById('gameOver').classList.remove('show');
         }
 
         function showDifficultySelector() {
             document.getElementById('questionSection').classList.remove('active');
             document.getElementById('gameOver').classList.remove('show');
+            document.getElementById('difficultySelector').style.display = 'flex';
             document.querySelectorAll('.difficulty-btn').forEach(btn => btn.classList.remove('active'));
             currentDifficulty = '';
         }
