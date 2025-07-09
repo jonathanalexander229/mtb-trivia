@@ -58,6 +58,10 @@
             margin-bottom: 30px;
         }
 
+        .difficulty-selector.hidden {
+            display: none;
+        }
+
         .difficulty-btn {
             padding: 15px 25px;
             border: none;
@@ -126,6 +130,24 @@
             display: none;
             opacity: 0;
             transition: opacity 0.3s ease;
+        }
+
+        .change-difficulty-btn {
+            background: linear-gradient(135deg, #666666 0%, #888888 100%);
+            color: white;
+            border: 2px solid #999999;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.9em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 15px;
+        }
+
+        .change-difficulty-btn:hover {
+            background: linear-gradient(135deg, #888888 0%, #aaaaaa 100%);
+            transform: translateY(-1px);
         }
 
         .question-section.active {
@@ -347,6 +369,7 @@
         </div>
 
         <div class="question-section" id="questionSection">
+            <button class="change-difficulty-btn" onclick="changeDifficulty()" style="display: none;" id="changeDifficultyBtn">Change Difficulty</button>
             <div class="score-info">
                 <span>Question: <span id="currentQuestion">1</span>/<span id="totalQuestions">10</span></span>
                 <span>Score: <span id="currentScore">0</span></span>
@@ -365,8 +388,7 @@
             <h2>Game Complete! 🏆</h2>
             <div class="final-score" id="finalScore"></div>
             <p id="scoreMessage"></p>
-            <button class="restart-btn" onclick="restartGame()">Play Again</button>
-            <button class="restart-btn" onclick="showDifficultySelector()">Change Difficulty</button>
+            <button class="restart-btn" onclick="showDifficultySelector()">Play Again</button>
         </div>
     </div>
 
@@ -629,9 +651,11 @@
             const maxQuestions = questionCounts[difficulty] || 10;
             gameQuestions = gameQuestions.slice(0, Math.min(maxQuestions, gameQuestions.length));
             
-            // Show question section
+            // Hide difficulty selector and show question section
+            document.getElementById('difficultySelector').classList.add('hidden');
             document.getElementById('questionSection').classList.add('active');
             document.getElementById('gameOver').classList.remove('show');
+            document.getElementById('changeDifficultyBtn').style.display = 'block';
             
             loadQuestion();
         }
@@ -733,7 +757,7 @@
             // Show next button after animation
             setTimeout(() => {
                 document.getElementById('nextBtn').classList.add('show');
-            }, 1000);
+            }, 500);
         }
 
 
@@ -766,20 +790,35 @@
         }
 
         function restartGame() {
-            if (currentDifficulty) {
-                selectDifficulty(currentDifficulty);
-            } else {
-                showDifficultySelector();
-                document.getElementById('questionSection').classList.remove('active');
-                document.getElementById('gameOver').classList.remove('show');
-            }
+            showDifficultySelector();
         }
 
         function showDifficultySelector() {
             document.getElementById('questionSection').classList.remove('active');
             document.getElementById('gameOver').classList.remove('show');
+            document.getElementById('difficultySelector').classList.remove('hidden');
+            document.getElementById('changeDifficultyBtn').style.display = 'none';
             document.querySelectorAll('.difficulty-btn').forEach(btn => btn.classList.remove('active'));
             currentDifficulty = '';
+        }
+
+        function changeDifficulty() {
+            // Reset game state
+            currentDifficulty = '';
+            currentQuestionIndex = 0;
+            score = 0;
+            gameQuestions = [];
+            answered = false;
+            currentQuestionId = null;
+            
+            // Show difficulty selector and hide other sections
+            document.getElementById('difficultySelector').classList.remove('hidden');
+            document.getElementById('questionSection').classList.remove('active');
+            document.getElementById('gameOver').classList.remove('show');
+            document.getElementById('changeDifficultyBtn').style.display = 'none';
+            
+            // Clear active states
+            document.querySelectorAll('.difficulty-btn').forEach(btn => btn.classList.remove('active'));
         }
     </script>
 </body>
