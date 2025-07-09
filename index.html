@@ -394,6 +394,7 @@
             <div class="score-info">
                 <span>Question: <span id="currentQuestion">1</span>/<span id="totalQuestions">10</span></span>
                 <span>Score: <span id="currentScore">0</span></span>
+                <span>Wrong: <span id="wrongAnswerCount">0</span>/<span id="maxWrongAnswers">5</span></span>
             </div>
 
             <div class="question-card">
@@ -672,6 +673,9 @@
             };
             maxWrongAnswers = wrongAnswerLimits[difficulty] || 5;
             
+            // Update max wrong answers display
+            document.getElementById('maxWrongAnswers').textContent = maxWrongAnswers;
+            
             // Update active button
             document.querySelectorAll('.difficulty-btn').forEach(btn => btn.classList.remove('active'));
             document.querySelector(`.difficulty-btn.${difficulty}`).classList.add('active');
@@ -738,6 +742,7 @@
             document.getElementById('currentQuestion').textContent = currentQuestionIndex + 1;
             document.getElementById('totalQuestions').textContent = gameQuestions.length;
             document.getElementById('currentScore').textContent = score;
+            document.getElementById('wrongAnswerCount').textContent = wrongAnswers;
             document.getElementById('categoryIndicator').textContent = question.category || 'General';
             const questionTextElement = document.getElementById('questionText');
             questionTextElement.textContent = question.question;
@@ -778,6 +783,7 @@
                 document.getElementById('currentScore').textContent = score;
             } else {
                 wrongAnswers++;
+                document.getElementById('wrongAnswerCount').textContent = wrongAnswers;
                 buttons[correctIndex].classList.add('correct');
             }
             
