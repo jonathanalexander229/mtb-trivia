@@ -58,9 +58,6 @@
             margin-bottom: 30px;
         }
 
-        .difficulty-selector.hidden {
-            display: none;
-        }
 
         .difficulty-btn {
             padding: 15px 25px;
@@ -132,23 +129,6 @@
             transition: opacity 0.3s ease;
         }
 
-        .change-difficulty-btn {
-            background: linear-gradient(135deg, #666666 0%, #888888 100%);
-            color: white;
-            border: 2px solid #999999;
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-size: 0.9em;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-bottom: 15px;
-        }
-
-        .change-difficulty-btn:hover {
-            background: linear-gradient(135deg, #888888 0%, #aaaaaa 100%);
-            transform: translateY(-1px);
-        }
 
         .question-section.active {
             display: block;
@@ -369,11 +349,9 @@
         </div>
 
         <div class="question-section" id="questionSection">
-            <button class="change-difficulty-btn" onclick="changeDifficulty()" style="display: none;" id="changeDifficultyBtn">Change Difficulty</button>
             <div class="score-info">
-                <span>Question: <span id="currentQuestion">1</span></span>
+                <span>Question: <span id="currentQuestion">1</span>/<span id="totalQuestions">10</span></span>
                 <span>Score: <span id="currentScore">0</span></span>
-                <span>Wrong: <span id="wrongCount">0</span>/<span id="maxWrong">5</span></span>
             </div>
 
             <div class="question-card">
@@ -389,7 +367,8 @@
             <h2>Game Complete! 🏆</h2>
             <div class="final-score" id="finalScore"></div>
             <p id="scoreMessage"></p>
-            <button class="restart-btn" onclick="showDifficultySelector()">Play Again</button>
+            <button class="restart-btn" onclick="restartGame()">Play Again</button>
+            <button class="restart-btn" onclick="showDifficultySelector()">Change Difficulty</button>
         </div>
     </div>
 
@@ -656,11 +635,9 @@
             
             // No need to limit questions since we're going until X wrong answers
             
-            // Hide difficulty selector and show question section
-            document.getElementById('difficultySelector').classList.add('hidden');
+            // Show question section
             document.getElementById('questionSection').classList.add('active');
             document.getElementById('gameOver').classList.remove('show');
-            document.getElementById('changeDifficultyBtn').style.display = 'block';
             
             loadQuestion();
         }
@@ -712,9 +689,8 @@
             currentQuestionId = question.id || null;
             
             document.getElementById('currentQuestion').textContent = currentQuestionIndex + 1;
+            document.getElementById('totalQuestions').textContent = gameQuestions.length;
             document.getElementById('currentScore').textContent = score;
-            document.getElementById('wrongCount').textContent = wrongAnswers;
-            document.getElementById('maxWrong').textContent = maxWrongAnswers;
             document.getElementById('categoryIndicator').textContent = question.category || 'General';
             const questionTextElement = document.getElementById('questionText');
             questionTextElement.textContent = question.question;
@@ -755,7 +731,6 @@
                 document.getElementById('currentScore').textContent = score;
             } else {
                 wrongAnswers++;
-                document.getElementById('wrongCount').textContent = wrongAnswers;
                 buttons[correctIndex].classList.add('correct');
             }
             
@@ -772,7 +747,7 @@
             // Show next button after animation
             setTimeout(() => {
                 document.getElementById('nextBtn').classList.add('show');
-            }, 500);
+            }, 1000);
         }
 
 
@@ -806,36 +781,20 @@
         }
 
         function restartGame() {
-            showDifficultySelector();
+            if (currentDifficulty) {
+                selectDifficulty(currentDifficulty);
+            } else {
+                showDifficultySelector();
+                document.getElementById('questionSection').classList.remove('active');
+                document.getElementById('gameOver').classList.remove('show');
+            }
         }
 
         function showDifficultySelector() {
             document.getElementById('questionSection').classList.remove('active');
             document.getElementById('gameOver').classList.remove('show');
-            document.getElementById('difficultySelector').classList.remove('hidden');
-            document.getElementById('changeDifficultyBtn').style.display = 'none';
             document.querySelectorAll('.difficulty-btn').forEach(btn => btn.classList.remove('active'));
             currentDifficulty = '';
-        }
-
-        function changeDifficulty() {
-            // Reset game state
-            currentDifficulty = '';
-            currentQuestionIndex = 0;
-            score = 0;
-            wrongAnswers = 0;
-            gameQuestions = [];
-            answered = false;
-            currentQuestionId = null;
-            
-            // Show difficulty selector and hide other sections
-            document.getElementById('difficultySelector').classList.remove('hidden');
-            document.getElementById('questionSection').classList.remove('active');
-            document.getElementById('gameOver').classList.remove('show');
-            document.getElementById('changeDifficultyBtn').style.display = 'none';
-            
-            // Clear active states
-            document.querySelectorAll('.difficulty-btn').forEach(btn => btn.classList.remove('active'));
         }
     </script>
 </body>
