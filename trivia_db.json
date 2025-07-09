@@ -258,6 +258,126 @@
         "answers": ["It lowers the center of gravity for better stability", "It makes the bike easier to mount and dismount", "It reduces the weight of the overall frame", "It allows for larger wheels to be fitted"],
         "correct": 0,
         "explanation": "A lower bottom bracket reduces the bike's center of gravity, improving stability and handling, especially in corners."
+      },
+      {
+        "id": "easy_201",
+        "category": "Technology",
+        "question": "What does SRAM call their new direct-mount drivetrain system that eliminated traditional derailleur hangers?",
+        "answers": ["SRAM Transmission - the future of shifting", "SRAM Evolution - the next generation", "SRAM Revolution - the game changer", "SRAM Advancement - the new standard"],
+        "correct": 0,
+        "explanation": "SRAM Transmission is their revolutionary new drivetrain system that mounts directly to the Universal Derailleur Hanger (UDH) without a traditional derailleur hanger."
+      },
+      {
+        "id": "easy_202",
+        "category": "Events",
+        "question": "Which bike won the 2024 Pinkbike Mountain Bike of the Year award?",
+        "answers": ["Canyon Spectral - the versatile trail dominator", "Specialized Epic 8 - the XC speed machine", "Santa Cruz Bronson - the all-mountain beast", "Trek Top Fuel - the efficient climber"],
+        "correct": 0,
+        "explanation": "The Canyon Spectral won the 2024 Pinkbike Mountain Bike of the Year award for its versatile trail performance and ability to handle various terrain types."
+      },
+      {
+        "id": "easy_203",
+        "category": "Events",
+        "question": "What award did the Marin Alpine Trail win in 2024?",
+        "answers": ["Pinkbike Value Bike of the Year - incredible bang for buck", "Pinkbike Innovation Award - groundbreaking design", "Pinkbike Durability Award - built to last", "Pinkbike Style Award - stunning aesthetics"],
+        "correct": 0,
+        "explanation": "The Marin Alpine Trail won the 2024 Pinkbike Value Bike of the Year award for offering impressive features and performance at an affordable price point."
+      },
+      {
+        "id": "easy_204",
+        "category": "Riders",
+        "question": "Who won the 2024 Elite Men's Downhill World Championship?",
+        "answers": ["Loris Vergier - the French sensation finally gets his rainbow", "Jackson Goldstone - the Canadian speed demon", "Loïc Bruni - the veteran champion", "Greg Minnaar - the South African legend"],
+        "correct": 0,
+        "explanation": "Loris Vergier from France won his first Elite Men's Downhill World Championship in 2024 in Andorra, beating Benoît Coulanges by just 0.148 seconds."
+      },
+      {
+        "id": "easy_205",
+        "category": "Events",
+        "question": "Where were the 2024 Mountain Bike World Championships held?",
+        "answers": ["Pal Arinsal, Andorra - high in the Pyrenees", "Val di Sole, Italy - in the Italian Alps", "Mont-Sainte-Anne, Canada - the classic venue", "Fort William, Scotland - the Highland challenge"],
+        "correct": 0,
+        "explanation": "The 2024 UCI Mountain Bike World Championships took place at Pal Arinsal in Andorra from August 28 to September 1."
+      },
+      {
+        "id": "easy_206",
+        "category": "Riders",
+        "question": "Who defended their Olympic mountain bike gold medal at Paris 2024?",
+        "answers": ["Tom Pidcock - the British multi-discipline master", "Nino Schurter - the Swiss cross-country king", "Pauline Ferrand-Prévot - the French powerhouse", "Christopher Blevins - the American rising star"],
+        "correct": 0,
+        "explanation": "Tom Pidcock successfully defended his Olympic XCO gold medal at Paris 2024, overcoming a puncture to beat Victor Koretzky in a thrilling finish."
+      },
+      {
+        "id": "easy_207",
+        "category": "Technology",
+        "question": "What standard does SRAM Transmission require to mount directly to the frame?",
+        "answers": ["UDH - Universal Derailleur Hanger standard", "BSA - Bottom Bracket Shell standard", "PF - Press Fit standard", "QR - Quick Release standard"],
+        "correct": 0,
+        "explanation": "SRAM Transmission requires the Universal Derailleur Hanger (UDH) standard to mount directly to the frame without a traditional derailleur hanger."
+      },
+      {
+        "id": "easy_208",
+        "category": "Riders",
+        "question": "Which American rider has been dominating both XCO and XCC World Cup categories in 2025?",
+        "answers": ["Christopher Blevins - winning in both disciplines", "Kate Courtney - the cross-country specialist", "Riley Amos - the rising talent", "Howard Grotts - the veteran racer"],
+        "correct": 0,
+        "explanation": "Christopher Blevins has been dominating both XCO (Cross-Country Olympic) and XCC (Cross-Country Short Track) World Cup categories in 2025."
+      },
+      {
+        "id": "easy_209",
+        "category": "Events",
+        "question": "Which team did 2024 Downhill World Champion Loris Vergier join for 2025?",
+        "answers": ["Commencal Muc-Off - the gravity specialists", "Santa Cruz Syndicate - the speed demons", "Trek Factory Racing - the innovation leaders", "Specialized Gravity - the technical masters"],
+        "correct": 0,
+        "explanation": "Loris Vergier joined the Commencal Muc-Off team for 2025 after winning the 2024 Elite Men's Downhill World Championship."
+      },
+      {
+        "id": "easy_210",
+        "category": "Riders",
+        "question": "How many consecutive World Cup XCC races did Christopher Blevins win at the start of 2025?",
+        "answers": ["Five straight wins - an incredible streak", "Three consecutive victories - building momentum", "Seven straight wins - total dominance", "Four consecutive victories - impressive consistency"],
+        "correct": 0,
+        "explanation": "Christopher Blevins won five consecutive World Cup XCC (Short Track) races at the start of the 2025 season."
+      },
+      {
+        "id": "easy_211",
+        "category": "Technology",
+        "question": "What type of chain interface does SRAM Transmission use?",
+        "answers": ["T-Type chain - with a flat top design", "Eagle chain - the traditional interface", "Road chain - adapted for mountain", "Power chain - for maximum efficiency"],
+        "correct": 0,
+        "explanation": "SRAM Transmission uses a T-Type chain interface featuring a flat top design, similar to their road groups but adapted for mountain biking."
+      },
+      {
+        "id": "easy_212",
+        "category": "Events",
+        "question": "What made Jackson Goldstone's 2025 World Cup performance special?",
+        "answers": ["First rider to win three consecutive DH rounds since Danny Hart in 2016", "Youngest rider to win five World Cup races", "First Canadian to win four rounds in one season", "Only rider to win on three different continents"],
+        "correct": 0,
+        "explanation": "Jackson Goldstone became the first rider to win three consecutive Men's Elite UCI Downhill World Cup rounds since Danny Hart in 2016."
+      },
+      {
+        "id": "easy_213",
+        "category": "Venues",
+        "question": "Which country first hosted the Marathon MTB World Championships in 2024?",
+        "answers": ["United States - at Snowshoe Mountain Resort", "France - in the French Alps", "Switzerland - in the Swiss mountains", "Canada - in the Canadian Rockies"],
+        "correct": 0,
+        "explanation": "The 2024 UCI Marathon Mountain Bike World Championships were held in the United States for the first time, at Snowshoe Mountain Resort in West Virginia."
+      },
+      {
+        "id": "easy_214",
+        "category": "Technology",
+        "question": "What was special about the Canyon Spectral featured in 2024 awards?",
+        "answers": ["It includes the K.I.S. steering stabilizer as standard", "It features the world's lightest carbon frame", "It has the longest travel in its category", "It uses the most advanced electronic shifting"],
+        "correct": 0,
+        "explanation": "The Canyon Spectral featured in 2024 awards includes the K.I.S. (Keep It Simple) steering stabilizer as a standard feature."
+      },
+      {
+        "id": "easy_215",
+        "category": "Riders",
+        "question": "Who became the first rider from New Zealand to win an elite women's XCO World Cup?",
+        "answers": ["Samara Maxwell - making history for New Zealand", "Evie Richards - the British champion", "Jenny Rissveds - the Swedish star", "Jolanda Neff - the Swiss powerhouse"],
+        "correct": 0,
+        "explanation": "Samara Maxwell became the first female rider from New Zealand to secure an XCO World Cup elite win in 2025."
       }
     ],
     "medium": [
@@ -500,6 +620,166 @@
         "answers": ["Air pressure can be easily adjusted to change spring rate plus significant weight savings", "Air shocks provide better grip on technical climbs", "Air shocks last longer between service intervals", "Air shocks work better in cold weather conditions"],
         "correct": 0,
         "explanation": "Air shocks can be precisely tuned with just a pump to adjust spring rate for different rider weights or terrain, and typically save 200-400 grams over coil shocks."
+      },
+      {
+        "id": "medium_201",
+        "category": "Technology",
+        "question": "What major advantage does SRAM Transmission's direct mount system provide over traditional derailleur hangers?",
+        "answers": ["No more bent hangers and precise shifting under full power", "Lighter weight and improved aerodynamics", "Better compatibility with all frame types", "Enhanced battery life and wireless range"],
+        "correct": 0,
+        "explanation": "SRAM Transmission's direct mount eliminates bent derailleur hangers and allows precise shifting even under full pedaling load, something traditional derailleurs struggle with."
+      },
+      {
+        "id": "medium_202",
+        "category": "Events",
+        "question": "By what margin did Loris Vergier win the 2024 Downhill World Championship?",
+        "answers": ["0.148 seconds - the closest possible margin", "0.5 seconds - a clear victory", "1.2 seconds - dominant performance", "0.08 seconds - photo finish"],
+        "correct": 0,
+        "explanation": "Loris Vergier won the 2024 Elite Men's Downhill World Championship by just 0.148 seconds over Benoît Coulanges, one of the closest margins ever."
+      },
+      {
+        "id": "medium_203",
+        "category": "Riders",
+        "question": "What significant achievement did Christopher Blevins accomplish in XC racing history?",
+        "answers": ["First American man to lead World Cup XC standings since John Tomac in 1991", "Youngest rider to win five World Cup XC races", "First rider to win both XCO and XCC in the same weekend", "Only American to win Marathon World Championships"],
+        "correct": 0,
+        "explanation": "Christopher Blevins is leading the World Cup XC standings, making him the first American man to do so since John Tomac's victories in 1991-1993."
+      },
+      {
+        "id": "medium_204",
+        "category": "Technology",
+        "question": "What happens when you try to mix SRAM Transmission components with older Eagle drivetrains?",
+        "answers": ["They are completely incompatible and won't work together", "You need special adapters for compatibility", "Only the cassette is compatible", "Everything works but shifting is slower"],
+        "correct": 0,
+        "explanation": "SRAM Transmission components are not backward-compatible with existing SRAM Eagle drivetrains due to the new T-Type chain interface and direct mount design."
+      },
+      {
+        "id": "medium_205",
+        "category": "Events",
+        "question": "What dramatic incident occurred during Tom Pidcock's 2024 Olympic victory?",
+        "answers": ["He suffered a tire puncture and lost 34 seconds before coming back", "He crashed on the final lap but still won", "His chain broke and he had to run his bike", "He was penalized for an illegal pass"],
+        "correct": 0,
+        "explanation": "Tom Pidcock suffered a tire puncture during the 2024 Paris Olympics men's XCO race, losing 34 seconds before mounting an incredible comeback to win gold."
+      },
+      {
+        "id": "medium_206",
+        "category": "Technology",
+        "question": "How many different levels does SRAM Transmission come in at launch?",
+        "answers": ["Three levels - X0, XX, and XX SL with different materials", "Two levels - Standard and Pro versions", "Four levels - SX, GX, X01, and XX1", "Five levels - from entry to world cup"],
+        "correct": 0,
+        "explanation": "SRAM Transmission launched in three distinct levels: X0, XX, and XX SL, each with different materials and construction affecting weight and performance."
+      },
+      {
+        "id": "medium_207",
+        "category": "Riders",
+        "question": "What makes Jackson Goldstone's 2025 season comeback particularly impressive?",
+        "answers": ["He missed the entire 2024 season due to knee injury", "He switched from Trek to Santa Cruz mid-season", "He recovered from a broken collarbone", "He came back from appendix surgery"],
+        "correct": 0,
+        "explanation": "Jackson Goldstone missed the entire 2024 season with a knee injury, making his 2025 comeback and three consecutive World Cup wins even more remarkable."
+      },
+      {
+        "id": "medium_208",
+        "category": "Events",
+        "question": "What was unique about the women's downhill podium at 2024 Worlds?",
+        "answers": ["Valentina Höll won her third consecutive title - first hat-trick in 20+ years", "Three different countries were represented", "All podium finishers were under 20 years old", "It was decided by less than 0.1 seconds"],
+        "correct": 0,
+        "explanation": "Valentina Höll's third consecutive downhill world title was the first hat-trick achieved by any rider in more than 20 years since Anne-Caroline Chausson."
+      },
+      {
+        "id": "medium_209",
+        "category": "Technology",
+        "question": "What weight advantage does SRAM's XX SL Transmission have over mechanical drivetrains?",
+        "answers": ["The full XX SL kit is lighter than XTR cable drivetrain even without cables", "It's 500 grams lighter than any mechanical system", "Weight is identical but shifting is superior", "It's heavier but the performance justifies it"],
+        "correct": 0,
+        "explanation": "A full SRAM XX SL Transmission kit including batteries is actually lighter than a Shimano XTR cable drivetrain without even including the weight of cables and housing."
+      },
+      {
+        "id": "medium_210",
+        "category": "Venues",
+        "question": "What significant milestone did Christopher Blevins achieve at the 2024 Marathon World Championships?",
+        "answers": ["Won silver medal behind Czech rider Krystof Hradek", "Became the first American to win Marathon Worlds", "Set a new course record at Snowshoe", "Won despite starting at the back due to no UCI points"],
+        "correct": 0,
+        "explanation": "Christopher Blevins won the silver medal at the 2024 Marathon MTB World Championships, finishing just 10 seconds behind winner Krystof Hradek from Czech Republic."
+      },
+      {
+        "id": "medium_211",
+        "category": "Technology",
+        "question": "What makes the Marin Alpine Trail notable in the value bike category?",
+        "answers": ["Downtube storage system on an aluminum frame at this price point", "First bike under $2000 with electronic shifting", "Lightest aluminum frame in its class", "Only value bike with full carbon wheelset"],
+        "correct": 0,
+        "explanation": "The Marin Alpine Trail features a downtube storage system, which is rarely found at this price point, especially on an aluminum frame."
+      },
+      {
+        "id": "medium_212",
+        "category": "Events",
+        "question": "How did Loïc Bruni's crash affect the 2024 DH World Championship result?",
+        "answers": ["He was leading by 1.8 seconds when he crashed, handing victory to Vergier", "He crashed in qualifying and couldn't race the final", "He crashed early but still finished on the podium", "His crash took out two other riders"],
+        "correct": 0,
+        "explanation": "Loïc Bruni was leading by 1.8 seconds when he crashed near the finish, essentially handing the victory to his close friend Loris Vergier."
+      },
+      {
+        "id": "medium_213",
+        "category": "Riders",
+        "question": "What notable achievement did Evie Richards accomplish in 2025 XCC racing?",
+        "answers": ["Became the most successful elite women's XCC Short Track racer in history", "Won five consecutive XCC races", "First British rider to win an XCC race", "Set a new course record in Brazil"],
+        "correct": 0,
+        "explanation": "Evie Richards overtook Pauline Ferrand-Prévot to become the most successful elite women's XCC Short Track racer in history."
+      },
+      {
+        "id": "medium_214",
+        "category": "Technology",
+        "question": "What significant change did Canyon make to the Spectral for 2024?",
+        "answers": ["Reduced travel to 150/140mm and added 29-inch wheels", "Increased travel to 160/150mm for more capability", "Switched to mixed wheel sizes as standard", "Added electronic shifting as standard equipment"],
+        "correct": 0,
+        "explanation": "The 2024 Canyon Spectral features slightly less travel than its predecessor (150/140mm) and uses 29-inch wheels with the K.I.S. steering stabilizer."
+      },
+      {
+        "id": "medium_215",
+        "category": "Events",
+        "question": "What was special about the Trek Slash's 2023 achievement?",
+        "answers": ["First bike to win Pinkbike Mountain Bike of the Year two years running", "First high-pivot bike to win a major award", "Lightest enduro bike ever tested", "First bike to win without electronic components"],
+        "correct": 0,
+        "explanation": "The Trek Slash marked the first time in Pinkbike history that the same brand (Trek) won Mountain Bike of the Year in consecutive years (2022 Fuel EX, 2023 Slash)."
+      },
+      {
+        "id": "medium_216",
+        "category": "Technology",
+        "question": "What innovative feature does SRAM Transmission include to prevent damage from impacts?",
+        "answers": ["Overload clutch that allows derailleur to move inward on impact", "Breakaway mount that detaches to prevent frame damage", "Shock-absorbing elastomer in the mounting system", "Automatic chain guide that deploys on impact"],
+        "correct": 0,
+        "explanation": "SRAM Transmission features an \"overload clutch\" that allows the derailleur to uncouple from the electric motor and move inward when it hits rocks or other obstacles."
+      },
+      {
+        "id": "medium_217",
+        "category": "Riders",
+        "question": "What makes Alan Hatherly's 2024 Olympic result historically significant?",
+        "answers": ["First non-European to win an Olympic medal in men's mountain bike", "Youngest rider to medal in Olympic MTB", "First South African to medal in cycling", "Fastest bronze medal time in Olympic history"],
+        "correct": 0,
+        "explanation": "Alan Hatherly's bronze medal at the 2024 Paris Olympics made him the first non-European rider ever to win an Olympic medal in men's mountain bike cross-country."
+      },
+      {
+        "id": "medium_218",
+        "category": "Events",
+        "question": "What was unique about the 2024 Cross-Country Olympic course at Paris?",
+        "answers": ["Riders could see the Eiffel Tower from the highest point at Elancourt Hill", "It was the longest XC course in Olympic history", "First Olympic course to include man-made jumps", "Only course to be held entirely on tarmac"],
+        "correct": 0,
+        "explanation": "The 2024 Olympic XC course was held at Elancourt Hill, the highest point in the Paris region at 231 meters, where riders could see the Eiffel Tower from the top."
+      },
+      {
+        "id": "medium_219",
+        "category": "Technology",
+        "question": "What chain compatibility issue exists with SRAM Transmission?",
+        "answers": ["Non-T Type Eagle chains won't grab the chainring securely", "T-Type chains are only compatible with SRAM cassettes", "The chain is too narrow for standard chainrings", "Transmission chains wear out twice as fast"],
+        "correct": 0,
+        "explanation": "Previous non-T Type Eagle chains do not grab SRAM Transmission chainrings securely due to the new interface design, requiring the specific T-Type chain."
+      },
+      {
+        "id": "medium_220",
+        "category": "Events",
+        "question": "What record did Jackson Goldstone achieve regarding Red Bull Hardline?",
+        "answers": ["Youngest winner ever at 18 years old in 2022", "First Canadian to win the event", "Only rider to win twice in a row", "Fastest time in event history"],
+        "correct": 0,
+        "explanation": "Jackson Goldstone became the youngest ever Red Bull Hardline winner when he won at 18 years old in 2022, completing the revamped course in 2:20."
       }
     ],
     "hard": [
@@ -830,6 +1110,126 @@
         "answers": ["29-inch front wheel for rollover capability, 27.5-inch rear for agility", "Different tire compounds front and rear for varied grip", "Mixed drivetrain components for versatility", "Alternating suspension settings for varied terrain"],
         "correct": 0,
         "explanation": "A mullet setup uses a 29-inch front wheel for better rollover capability and a 27.5-inch rear wheel for improved agility and maneuverability."
+      },
+      {
+        "id": "hard_201",
+        "category": "Technology",
+        "question": "What specific technical advantage does SRAM Transmission's T-Type chain provide over traditional Eagle chains?",
+        "answers": ["Narrow-wide teeth interface allows shifting under full load without chain drop", "50% weight reduction compared to traditional chains", "Self-lubricating coating lasts 2000 miles", "Titanium construction provides ultimate durability"],
+        "correct": 0,
+        "explanation": "The T-Type chain's narrow-wide teeth interface with the new cassette and chainring design allows precise shifting even under full pedaling load, something traditional Eagle chains couldn't achieve reliably."
+      },
+      {
+        "id": "hard_202",
+        "category": "Events",
+        "question": "What specific time gap did Tom Pidcock make up to win the 2024 Olympic gold medal?",
+        "answers": ["34 seconds lost to puncture, won by 9 seconds over Koretzky", "45 seconds lost to crash, won by 15 seconds", "28 seconds lost to mechanical, won by 5 seconds", "52 seconds lost to wrong turn, won by 12 seconds"],
+        "correct": 0,
+        "explanation": "Pidcock lost 34 seconds due to his tire puncture but came back to win by 9 seconds over Victor Koretzky (1:26:22 vs 1:26:31)."
+      },
+      {
+        "id": "hard_203",
+        "category": "Technology",
+        "question": "What is the key difference between SRAM's new chainring mounting system on Transmission?",
+        "answers": ["Uses 8-bolt interface instead of traditional 3-bolt design", "Direct-mount to crank arm without chainring bolts", "Magnetic attachment system for quick changes", "Threaded interface like road cranks"],
+        "correct": 0,
+        "explanation": "SRAM Transmission uses an 8-bolt chainring interface compared to the 3-bolt system on previous Eagle cranks, meaning only SRAM chainrings are currently compatible."
+      },
+      {
+        "id": "hard_204",
+        "category": "Riders",
+        "question": "What surgical procedure did Jackson Goldstone undergo during his 2023 World Cup campaign?",
+        "answers": ["Appendix surgery after racing through appendix issues at Val di Sole", "Knee surgery after crash during training", "Shoulder surgery following Hardline crash", "Wrist surgery after practice crash"],
+        "correct": 0,
+        "explanation": "Jackson Goldstone had appendix surgery in 2023 after racing through ongoing appendix issues that started after a training crash, including winning Val di Sole while dealing with the problem."
+      },
+      {
+        "id": "hard_205",
+        "category": "Technology",
+        "question": "What specific weight difference exists between SRAM Transmission XX and previous AXS Eagle X01?",
+        "answers": ["XX Transmission is 27 grams lighter including battery vs AXS with UDH", "50 grams heavier due to direct mount construction", "Exactly the same weight as previous generation", "100 grams lighter due to carbon construction"],
+        "correct": 0,
+        "explanation": "Based on actual testing, SRAM Transmission XX (417g with battery) is 27 grams lighter than the previous AXS Eagle X01 (444g) when including the required UDH hanger."
+      },
+      {
+        "id": "hard_206",
+        "category": "Events",
+        "question": "What specific technical detail made Loris Vergier's 2024 World Championship victory dramatic?",
+        "answers": ["Had a bee in his helmet during first split but kept pushing", "Broke his chain on the final jump", "Rode with a flat tire for half the course", "His brakes failed on the steepest section"],
+        "correct": 0,
+        "explanation": "Loris Vergier revealed after his victory that he had a bee in his helmet during the first split and was \"a bit out of control\" but kept pushing to the finish line."
+      },
+      {
+        "id": "hard_207",
+        "category": "Technology",
+        "question": "What frame compatibility requirement limits SRAM Transmission adoption?",
+        "answers": ["Frames built before 2019 lack UDH and cannot be retrofitted", "Only carbon frames can handle the mounting loads", "Requires specific bottom bracket threading", "Needs proprietary cable routing system"],
+        "correct": 0,
+        "explanation": "SRAM Transmission requires the Universal Derailleur Hanger (UDH) standard introduced in 2019, and frames built before this cannot be retrofitted to accept the direct-mount system."
+      },
+      {
+        "id": "hard_208",
+        "category": "Events",
+        "question": "What was the exact winning margin in the men's XCO at 2024 Paris Olympics?",
+        "answers": ["Pidcock won by 9 seconds: 1:26:22 vs Koretzky's 1:26:31", "Pidcock won by 15 seconds in a clear victory", "Pidcock won by 3 seconds in a sprint finish", "Pidcock won by 1 second in the closest finish ever"],
+        "correct": 0,
+        "explanation": "Tom Pidcock's winning time was 1:26:22, with Victor Koretzky second at 1:26:31 and Alan Hatherly third at 1:26:33."
+      },
+      {
+        "id": "hard_209",
+        "category": "Technology",
+        "question": "What specific technical innovation does the Canyon Spectral's K.I.S. system provide?",
+        "answers": ["Steering stabilizer to reduce feedback and improve control", "Kinetic Impact Suppression for crash protection", "Keep It Simple cable routing system", "Kinematic Isolation System for suspension"],
+        "correct": 0,
+        "explanation": "The Canyon Spectral's K.I.S. (Keep It Simple) is actually a steering stabilizer system designed to reduce feedback and improve control on rough terrain."
+      },
+      {
+        "id": "hard_210",
+        "category": "Riders",
+        "question": "What specific achievement makes Christopher Blevins' World Cup performance historically significant?",
+        "answers": ["First American man since Ned Overend in 1994 to seriously contend for overall", "First rider to win both XCO and XCC overall in same year", "Youngest American to lead World Cup standings", "First to win perfect weekend (XCC and XCO) in same round"],
+        "correct": 0,
+        "explanation": "Christopher Blevins' 2024-2025 World Cup performance makes him the first American man since Ned Overend (2nd overall in 1994) to seriously contend for the overall World Cup title."
+      },
+      {
+        "id": "hard_211",
+        "category": "Technology",
+        "question": "What specific cassette range does SRAM Transmission offer compared to previous Eagle?",
+        "answers": ["10-52t providing 520% range vs Eagle's 500% (10-50t)", "10-50t same as Eagle but with better tooth profiles", "9-52t providing 578% range for ultimate climbing", "10-45t for closer ratio racing applications"],
+        "correct": 0,
+        "explanation": "SRAM Transmission offers a 10-52t cassette providing 520% gear range, compared to Eagle's 10-50t cassette with 500% range."
+      },
+      {
+        "id": "hard_212",
+        "category": "Events",
+        "question": "What specific detail about the 2024 DH World Championships made it historically close?",
+        "answers": ["Top five finishers separated by just half a second", "Decided by photo finish technology", "Three riders finished within 0.05 seconds", "Winner and runner-up tied to thousandths"],
+        "correct": 0,
+        "explanation": "The 2024 Elite Men's Downhill World Championship was incredibly competitive, with the top five riders finishing within just half a second of each other."
+      },
+      {
+        "id": "hard_213",
+        "category": "Technology",
+        "question": "What happens when you try to run SRAM Transmission with a standard derailleur hanger?",
+        "answers": ["System won't function - direct mount requires UDH interface", "Works but shifting precision is compromised", "Requires special adapter kit sold separately", "Functions normally but voids warranty"],
+        "correct": 0,
+        "explanation": "SRAM Transmission absolutely requires the UDH interface for its direct mount system and will not function with traditional derailleur hangers at all."
+      },
+      {
+        "id": "hard_214",
+        "category": "Riders",
+        "question": "What specific statistic makes Jackson Goldstone's early 2025 performance remarkable?",
+        "answers": ["First to win three consecutive Men Elite DH rounds since Danny Hart in 2016", "Fastest qualifier at every round he entered", "Only rider to podium at every 2025 race", "Youngest rider to lead overall standings"],
+        "correct": 0,
+        "explanation": "Jackson Goldstone's three consecutive Elite Men's DH World Cup victories in 2025 made him the first rider to achieve this since Danny Hart in 2016."
+      },
+      {
+        "id": "hard_215",
+        "category": "Technology",
+        "question": "What specific technical challenge did the Marin Alpine Trail solve for value bikes?",
+        "answers": ["Integrated downtube storage on aluminum frame under $2000", "First sub-$2000 bike with 160mm+ travel", "Electronic shifting compatibility at value price", "Carbon frame construction under budget threshold"],
+        "correct": 0,
+        "explanation": "The Marin Alpine Trail won Value Bike of the Year partly because it offers integrated downtube storage on an aluminum frame at a price point where such features are typically unavailable."
       }
     ],
     "removed": [
@@ -845,11 +1245,11 @@
     ]
   },
   "metadata": {
-    "total_questions": 101,
+    "total_questions": 151,
     "questions_by_difficulty": {
-      "easy": 30,
-      "medium": 30, 
-      "hard": 41
+      "easy": 45,
+      "medium": 50, 
+      "hard": 56
     },
     "questions_by_category": {
       "Parts": 13,
@@ -857,14 +1257,14 @@
       "Accessories": 4,
       "Trails": 6,
       "History": 7,
-      "Venues": 11,
-      "Events": 11,
+      "Venues": 14,
+      "Events": 19,
       "Suspension": 15,
-      "Riders": 8,
+      "Riders": 16,
       "Races": 4,
       "Lore": 4,
       "Design": 6,
-      "Technology": 17,
+      "Technology": 30,
       "Records": 4
     }
   }
