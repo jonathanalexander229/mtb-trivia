@@ -305,6 +305,48 @@
             transform: translateY(-2px);
         }
 
+        .share-btn {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .share-btn:hover {
+            background: linear-gradient(135deg, #f7931e 0%, #e8851d 100%);
+            transform: translateY(-2px);
+        }
+
+        .share-btn:active {
+            transform: translateY(0);
+        }
+
+        .share-icon {
+            font-size: 1.2em;
+        }
+
+        .share-feedback {
+            color: #4CAF50;
+            font-size: 0.9em;
+            margin-top: 5px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .share-feedback.show {
+            opacity: 1;
+        }
+
         @media (max-width: 768px) {
             .game-container {
                 padding: 20px;
@@ -367,6 +409,11 @@
             <h2>Game Complete! 🏆</h2>
             <div class="final-score" id="finalScore"></div>
             <p id="scoreMessage"></p>
+            <button class="share-btn" onclick="shareScore()">
+                <span class="share-icon">🚵‍♂️</span>
+                Share Score
+            </button>
+            <div class="share-feedback" id="shareFeedback"></div>
             <button class="restart-btn" onclick="restartGame()">Play Again</button>
             <button class="restart-btn" onclick="showDifficultySelector()">Change Difficulty</button>
         </div>
@@ -795,6 +842,83 @@
             document.getElementById('gameOver').classList.remove('show');
             document.querySelectorAll('.difficulty-btn').forEach(btn => btn.classList.remove('active'));
             currentDifficulty = '';
+        }
+
+        function shareScore() {
+            const totalAnswered = score + wrongAnswers;
+            const percentage = totalAnswered > 0 ? Math.round((score / totalAnswered) * 100) : 0;
+            
+            const difficultyNames = {
+                easy: 'Easy Trail',
+                medium: 'Technical Ride',
+                hard: 'Gnarly Descent'
+            };
+            
+            const difficultyName = difficultyNames[currentDifficulty] || 'Unknown';
+            
+            const shareText = `🚵‍♂️ Just crushed the MTB Trivia Challenge!
+📊 Score: ${score} correct, ${wrongAnswers} wrong (${percentage}% accuracy)
+🏔️ Difficulty: ${difficultyName}
+${getPerformanceEmoji(percentage)} ${getPerformanceMessage(percentage)}
+
+Think you can beat my score? 
+https://jonathanalexander229.github.io/mtb-trivia/`;
+
+            // Try Web Share API first (mobile)
+            if (navigator.share) {
+                navigator.share({
+                    title: 'MTB Trivia Challenge Score',
+                    text: shareText,
+                    url: 'https://jonathanalexander229.github.io/mtb-trivia/'
+                }).then(() => {
+                    showShareFeedback('Shared successfully! 🎉');
+                }).catch((error) => {
+                    if (error.name !== 'AbortError') {
+                        fallbackShare(shareText);
+                    }
+                });
+            } else {
+                // Fallback to clipboard
+                fallbackShare(shareText);
+            }
+        }
+
+        function fallbackShare(text) {
+            // Try to copy to clipboard
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(() => {
+                    showShareFeedback('Score copied to clipboard! 📋');
+                }).catch(() => {
+                    showShareFeedback('Unable to copy. Try selecting and copying manually.');
+                });
+            } else {
+                // Very old browser fallback
+                showShareFeedback('Share not supported. Copy your score manually!');
+            }
+        }
+
+        function showShareFeedback(message) {
+            const feedback = document.getElementById('shareFeedback');
+            feedback.textContent = message;
+            feedback.classList.add('show');
+            
+            setTimeout(() => {
+                feedback.classList.remove('show');
+            }, 3000);
+        }
+
+        function getPerformanceEmoji(percentage) {
+            if (percentage >= 90) return '🏆';
+            if (percentage >= 70) return '🚵‍♂️';
+            if (percentage >= 50) return '⛰️';
+            return '🌱';
+        }
+
+        function getPerformanceMessage(percentage) {
+            if (percentage >= 90) return 'Mountain Bike Master!';
+            if (percentage >= 70) return 'Solid rider!';
+            if (percentage >= 50) return 'Getting there!';
+            return 'Keep learning!';
         }
     </script>
 </body>
