@@ -315,7 +315,7 @@
             font-weight: bold;
             cursor: pointer;
             transition: all 0.3s ease;
-            margin: 10px;
+            margin: 10px auto;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -410,10 +410,12 @@
             <h2>Game Complete! 🏆</h2>
             <div class="final-score" id="finalScore"></div>
             <p id="scoreMessage"></p>
-            <button class="share-btn" onclick="shareScore()">
-                <span class="share-icon">🚵‍♂️</span>
-                Share Score
-            </button>
+            <div style="display: flex; justify-content: center;">
+                <button class="share-btn" onclick="shareScore()">
+                    <span class="share-icon">🚵‍♂️</span>
+                    Share Score
+                </button>
+            </div>
             <div class="share-feedback" id="shareFeedback"></div>
             <button class="restart-btn" onclick="restartGame()">Play Again</button>
         </div>
@@ -865,8 +867,7 @@
 🏔️ Difficulty: ${difficultyName}
 ${getPerformanceEmoji(percentage)} ${getPerformanceMessage(percentage)}
 
-Think you can beat my score? 
-https://jonathanalexander229.github.io/mtb-trivia/`;
+Think you can beat my score?`;
 
             // Try Web Share API first (mobile)
             if (navigator.share) {
